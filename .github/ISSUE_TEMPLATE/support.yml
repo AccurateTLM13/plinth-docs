@@ -1,0 +1,72 @@
+name: Support request
+description: Ask a question or report a problem with the Plinth Shopify theme.
+title: "[Support]: "
+labels: ["support"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for getting in touch. Please check the [FAQ and troubleshooting](https://accuratetlm13.github.io/plinth-docs/faq/) page first.
+
+        **This request is public.** Don't include passwords, staff account details, customer or order information, or anything else private.
+  - type: dropdown
+    id: theme_version
+    attributes:
+      label: Theme version
+      description: Shown in Online Store > Themes.
+      options:
+        - "1.1.0 (latest)"
+        - An older version
+        - I'm not sure
+    validations:
+      required: true
+  - type: dropdown
+    id: topic
+    attributes:
+      label: Topic
+      options:
+        - Installation and setup
+        - Theme settings
+        - Sections and blocks
+        - Product page
+        - Cart and checkout
+        - Filtering and search
+        - Localization
+        - Something isn't working (bug)
+        - Feature request
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: store_url
+    attributes:
+      label: Store URL (optional)
+      description: Only if you're happy for it to be public, for example your-store.myshopify.com.
+  - type: textarea
+    id: description
+    attributes:
+      label: What do you need help with?
+      description: What were you trying to do, and what happened instead?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce (for problems)
+      description: The page address, and what to select or click to see the problem.
+      placeholder: |
+        1. Go to a product page
+        2. Select a variant
+        3. ...
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots (optional)
+      description: Drag images into this box. Crop out anything private.
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy check
+      options:
+        - label: I haven't included passwords, customer details or other private information.
+          required: true

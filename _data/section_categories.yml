@@ -1,0 +1,21 @@
+- id: chrome
+  name: Header and footer
+  intro: These sections appear on every page. Edit them from the header or footer area of the theme editor.
+- id: home
+  name: Home page and promotions
+  intro: Big, bold sections for introducing your brand and leading product. Add them to any page except the header and footer areas.
+- id: story
+  name: Storytelling and content
+  intro: Flexible content sections that work on the home page, product templates and standard pages.
+- id: product
+  name: Product page
+  intro: Sections built for product templates. Product information is the main section. The rest add detail around it.
+- id: pages
+  name: Page templates
+  intro: Each Shopify page type has one main section. It can't be removed, but you can add other sections above or below it.
+- id: utility
+  name: Apps and custom code
+  intro: Containers for app blocks and your own code, available everywhere.
+- id: system
+  name: Behind the scenes
+  intro: Parts of the theme that power features elsewhere. You won't add these yourself, but it helps to know what they do.

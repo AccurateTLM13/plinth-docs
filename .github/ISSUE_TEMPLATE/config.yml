@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Plinth documentation
+    url: https://accuratetlm13.github.io/plinth-docs/
+    about: Guides for setting up and using the Plinth theme.
+  - name: FAQ and troubleshooting
+    url: https://accuratetlm13.github.io/plinth-docs/faq/
+    about: Quick answers to the most common questions.

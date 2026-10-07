@@ -1,0 +1,108 @@
+---
+layout: default
+title: Support
+permalink: /support/
+lede: Questions about setting up or using Plinth? We're here to help.
+description: Contact Plinth theme support or open a support request.
+scripts:
+  - /assets/js/support.js
+---
+{%- assign form = site.support_form -%}
+{%- assign endpoint = form.endpoint | strip -%}
+{%- capture issue_url %}https://github.com/{{ site.github_repo }}/issues/new?template=support.yml{% endcapture -%}
+
+<h2 id="before">Before you get in touch</h2>
+<ul>
+  <li>Check the <a href="{{ '/faq/' | relative_url }}">FAQ and troubleshooting</a> page. Most setup questions are answered there.</li>
+  <li>Make sure you're on the latest version of Plinth (<strong>{{ site.theme_version }}</strong>). Your version is shown in <span class="path">Online Store &gt; Themes</span>.</li>
+  <li>If something looks broken, try it on an unedited copy of the theme with apps turned off. That helps us tell a theme issue from an app or code conflict.</li>
+</ul>
+
+<h2 id="contact">Contact form</h2>
+
+{%- if endpoint == "" %}
+<div class="callout callout--placeholder" id="form-unavailable">
+  <p><strong>The contact form isn't connected yet.</strong> Until it is, please <a href="{{ issue_url }}">open a support request on GitHub</a>. Support requests on GitHub are public, so don't include passwords, order details or other private information.</p>
+  <p style="margin-top:0.75rem"><a class="btn" href="{{ issue_url }}">Open a support request</a></p>
+</div>
+{%- endif %}
+
+<form class="form" id="support-form" method="post" accept-charset="utf-8"
+  {%- if endpoint != "" %} action="{{ endpoint | escape }}"{% endif %}
+  data-support-form data-issue-url="{{ issue_url }}" data-honeypot="{{ form.honeypot_field | escape }}"
+  aria-describedby="form-required-note">
+  <div class="form-status" id="form-status" tabindex="-1" hidden data-form-status></div>
+  <p id="form-required-note">All fields are required unless marked optional.</p>
+  <fieldset{% if endpoint == "" %} disabled aria-describedby="form-unavailable"{% endif %}>
+    <legend class="visually-hidden">Support request</legend>
+    <div class="field">
+      <label for="support-name">Name</label>
+      <input id="support-name" name="name" type="text" autocomplete="name" required maxlength="120" aria-describedby="support-name-error">
+      <p class="field__error" id="support-name-error" hidden></p>
+    </div>
+    <div class="field">
+      <label for="support-email">Email</label>
+      <span class="hint" id="support-email-hint">We'll reply to this address.</span>
+      <input id="support-email" name="email" type="email" autocomplete="email" required maxlength="254" aria-describedby="support-email-hint support-email-error">
+      <p class="field__error" id="support-email-error" hidden></p>
+    </div>
+    <div class="field">
+      <label for="support-store">Store URL <span class="optional">(optional)</span></label>
+      <span class="hint" id="support-store-hint">For example, your-store.myshopify.com</span>
+      <input id="support-store" name="store_url" type="text" inputmode="url" autocomplete="url" maxlength="200" aria-describedby="support-store-hint support-store-error">
+      <p class="field__error" id="support-store-error" hidden></p>
+    </div>
+    <div class="field">
+      <label for="support-version">Theme version</label>
+      <select id="support-version" name="theme_version" required aria-describedby="support-version-error">
+        <option value="{{ site.theme_version }}" selected>{{ site.theme_version }} (latest)</option>
+        <option value="Older version">An older version</option>
+        <option value="Not sure">I'm not sure</option>
+      </select>
+      <p class="field__error" id="support-version-error" hidden></p>
+    </div>
+    <div class="field">
+      <label for="support-topic">Topic</label>
+      <select id="support-topic" name="topic" required aria-describedby="support-topic-error">
+        <option value="">Choose a topic</option>
+        <option>Installation and setup</option>
+        <option>Theme settings</option>
+        <option>Sections and blocks</option>
+        <option>Product page</option>
+        <option>Cart and checkout</option>
+        <option>Filtering and search</option>
+        <option>Localization</option>
+        <option>Something isn't working (bug)</option>
+        <option>Feature request</option>
+        <option>Other</option>
+      </select>
+      <p class="field__error" id="support-topic-error" hidden></p>
+    </div>
+    <div class="field">
+      <label for="support-message">Message</label>
+      <span class="hint" id="support-message-hint">What were you trying to do, and what happened? Include the page address if it's about a specific page. Never include passwords.</span>
+      <textarea id="support-message" name="message" required maxlength="5000" rows="7" aria-describedby="support-message-hint support-message-error"></textarea>
+      <p class="field__error" id="support-message-error" hidden></p>
+    </div>
+    <div class="hp" aria-hidden="true">
+      <label for="support-hp">Leave this field empty</label>
+      <input id="support-hp" name="{{ form.honeypot_field | escape }}" type="text" tabindex="-1" autocomplete="off">
+    </div>
+    {%- for f in form.hidden_fields %}
+    <input type="hidden" name="{{ f[0] | escape }}" value="{{ f[1] | escape }}">
+    {%- endfor %}
+    <button class="btn btn--accent" type="submit" data-submit>Send message</button>
+  </fieldset>
+  {%- if endpoint != "" %}
+  <noscript><p>Your message is sent through our form provider, which shows a confirmation page when it's done.</p></noscript>
+  {%- endif %}
+</form>
+
+<h2 id="github">Open a support request on GitHub</h2>
+<p>You can also <a href="{{ issue_url }}">open a support request on GitHub</a> (a free GitHub account is needed), or <a href="https://github.com/{{ site.github_repo }}/issues">browse existing requests</a> to see if your question has already been answered. GitHub requests are public, so leave out anything private.</p>
+
+<h2 id="scope">What support covers</h2>
+<ul>
+  <li><strong>Covered:</strong> installing and setting up Plinth, using its settings and sections, and fixing problems with the theme's own features.</li>
+  <li><strong>Not covered:</strong> custom code changes, third-party apps, and Shopify settings that aren't part of the theme. We'll still help you work out whether a problem comes from the theme. For store and account questions, contact <a href="https://help.shopify.com/">Shopify Help Center</a>.</li>
+</ul>

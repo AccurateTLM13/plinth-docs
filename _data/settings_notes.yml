@@ -1,0 +1,10 @@
+# Short introductions for each Theme settings group, keyed by group slug.
+typography: Plinth uses one font family for headings and body text. Pick any font from Shopify's font library. System fonts load fastest.
+logo: Upload your logo and favicon, and set how wide the logo appears on desktop and mobile. Without a logo, the header shows your brand name as text.
+layout: Controls the maximum content width and the space at the edges of the screen.
+colors: Plinth ships with a dark, high-contrast scheme and a bright accent. If you change colors, keep strong contrast between text and background (at least 4.5:1 for body text).
+brand: Your brand name and tagline, plus the products and collections that power the flagship sections, the add-ons grid and the cart drawer suggestions.
+header: Choose the menus used in the header and in customer accounts. Search and selector options are in the Header section itself.
+footer: Choose the fallback footer menu and whether to show payment icons. Footer blocks and selectors are in the Footer section.
+social-media: Add the full web address of each profile, for example https://www.instagram.com/yourbrand. Icons appear only for the networks you fill in.
+cart: Options for the cart page and cart drawer, and for gift card products.

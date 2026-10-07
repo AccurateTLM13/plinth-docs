@@ -1,0 +1,1809 @@
+[
+  {
+    "type": "addons-grid",
+    "name": "Add-ons grid",
+    "addable": true,
+    "max_blocks": null,
+    "availability": [
+      "Not available in: header group, footer group"
+    ],
+    "used_in": [
+      "Default product",
+      "Home page"
+    ],
+    "settings": [
+      {
+        "kind": "setting",
+        "id": "collection",
+        "type": "Collection",
+        "label": "Collection",
+        "info": "Leave empty to use the theme setting Brand > Add-ons collection (also used by the cart drawer cross-sell).",
+        "default": ""
+      },
+      {
+        "kind": "setting",
+        "id": "eyebrow",
+        "type": "Text",
+        "label": "Eyebrow",
+        "info": "",
+        "default": ""
+      },
+      {
+        "kind": "setting",
+        "id": "heading",
+        "type": "Text",
+        "label": "Heading",
+        "info": "",
+        "default": ""
+      },
+      {
+        "kind": "setting",
+        "id": "text",
+        "type": "Multi-line text",
+        "label": "Text",
+        "info": "",
+        "default": ""
+      }
+    ],
+    "blocks": []
+  },
+  {
+    "type": "announcement-bar",
+    "name": "Announcement bar",
+    "addable": true,
+    "max_blocks": null,
+    "availability": [
+      "Only in: header group"
+    ],
+    "used_in": [
+      "Header group"
+    ],
+    "settings": [
+      {
+        "kind": "setting",
+        "id": "text",
+        "type": "Text",
+        "label": "Text",
+        "info": "",
+        "default": "Add a short announcement"
+      },
+      {
+        "kind": "setting",
+        "id": "link",
+        "type": "Link",
+        "label": "Link (optional)",
+        "info": "",
+        "default": ""
+      }
+    ],
+    "blocks": []
+  },
+  {
+    "type": "apps",
+    "name": "Apps",
+    "addable": true,
+    "max_blocks": null,
+    "availability": [],
+    "used_in": [],
+    "settings": [
+      {
+        "kind": "setting",
+        "id": "include_margins",
+        "type": "Checkbox",
+        "label": "Make section margins the same as theme",
+        "info": "",
+        "default": "On"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "@app",
+        "name": "App blocks",
+        "limit": null,
+        "settings": []
+      }
+    ]
+  },
+  {
+    "type": "cart-drawer",
+    "name": "Cart drawer",
+    "addable": false,
+    "max_blocks": null,
+    "availability": [],
+    "used_in": [],
+    "settings": [],
+    "blocks": []
+  },
+  {
+    "type": "comparison",
+    "name": "Comparison",
+    "addable": true,
+    "max_blocks": null,
+    "availability": [
+      "Not available in: header group, footer group"
+    ],
+    "used_in": [
+      "Home page",
+      "Product (flagship)"
+    ],
+    "settings": [
+      {
+        "kind": "setting",
+        "id": "heading",
+        "type": "Text",
+        "label": "Heading",
+        "info": "",
+        "default": "Compare"
+      },
+      {
+        "kind": "setting",
+        "id": "column_1",
+        "type": "Text",
+        "label": "Column 1",
+        "info": "",
+        "default": "Option A"
+      },
+      {
+        "kind": "setting",
+        "id": "column_2",
+        "type": "Text",
+        "label": "Column 2",
+        "info": "",
+        "default": "Option B"
+      },
+      {
+        "kind": "setting",
+        "id": "column_3",
+        "type": "Text",
+        "label": "Column 3",
+        "info": "",
+        "default": "Option C"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "row",
+        "name": "Row",
+        "limit": null,
+        "settings": [
+          {
+            "kind": "setting",
+            "id": "feature",
+            "type": "Text",
+            "label": "Feature",
+            "info": "Enter only accurate, verifiable values. Policy rows such as Warranty are optional: use your real terms or remove the row.",
+            "default": "Feature"
+          },
+          {
+            "kind": "setting",
+            "id": "value_1",
+            "type": "Text",
+            "label": "Column 1 value",
+            "info": "",
+            "default": "—"
+          },
+          {
+            "kind": "setting",
+            "id": "value_2",
+            "type": "Text",
+            "label": "Column 2 value",
+            "info": "",
+            "default": "—"
+          },
+          {
+            "kind": "setting",
+            "id": "value_3",
+            "type": "Text",
+            "label": "Column 3 value",
+            "info": "",
+            "default": "—"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "custom-liquid",
+    "name": "Custom Liquid",
+    "addable": true,
+    "max_blocks": null,
+    "availability": [],
+    "used_in": [],
+    "settings": [
+      {
+        "kind": "setting",
+        "id": "custom_liquid",
+        "type": "Liquid code",
+        "label": "Liquid code",
+        "info": "Add app snippets or other Liquid code to create advanced customizations.",
+        "default": ""
+      }
+    ],
+    "blocks": []
+  },
+  {
+    "type": "feature-grid",
+    "name": "Feature grid",
+    "addable": true,
+    "max_blocks": null,
+    "availability": [
+      "Not available in: header group, footer group"
+    ],
+    "used_in": [
+      "Home page",
+      "Product (flagship)"
+    ],
+    "settings": [
+      {
+        "kind": "setting",
+        "id": "eyebrow",
+        "type": "Text",
+        "label": "Eyebrow",
+        "info": "",
+        "default": ""
+      },
+      {
+        "kind": "setting",
+        "id": "heading",
+        "type": "Text",
+        "label": "Heading",
+        "info": "",
+        "default": "Why it matters"
+      },
+      {
+        "kind": "setting",
+        "id": "text",
+        "type": "Multi-line text",
+        "label": "Text",
+        "info": "",
+        "default": ""
+      }
+    ],
+    "blocks": [
+      {
+        "type": "feature",
+        "name": "Feature",
+        "limit": null,
+        "settings": [
+          {
+            "kind": "setting",
+            "id": "title",
+            "type": "Text",
+            "label": "Title",
+            "info": "",
+            "default": "Feature"
+          },
+          {
+            "kind": "setting",
+            "id": "text",
+            "type": "Multi-line text",
+            "label": "Text",
+            "info": "",
+            "default": "Short benefit description."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "featured-product",
+    "name": "Featured product",
+    "addable": true,
+    "max_blocks": null,
+    "availability": [
+      "Not available in: header group, footer group"
+    ],
+    "used_in": [
+      "Home page"
+    ],
+    "settings": [
+      {
+        "kind": "setting",
+        "id": "product",
+        "type": "Product",
+        "label": "Product",
+        "info": "",
+        "default": ""
+      }
+    ],
+    "blocks": [
+      {
+        "type": "@app",
+        "name": "App blocks",
+        "limit": null,
+        "settings": []
+      },
+      {
+        "type": "title",
+        "name": "Title",
+        "limit": 1,
+        "settings": []
+      },
+      {
+        "type": "price",
+        "name": "Price",
+        "limit": 1,
+        "settings": []
+      },
+      {
+        "type": "description",
+        "name": "Description",
+        "limit": 1,
+        "settings": [
+          {
+            "kind": "setting",
+            "id": "words",
+            "type": "Slider",
+            "label": "Maximum words",
+            "info": "",
+            "default": "30",
+            "range": "10–80"
+          }
+        ]
+      },
+      {
+        "type": "buy_buttons",
+        "name": "Buy buttons",
+        "limit": 1,
+        "settings": []
+      },
+      {
+        "type": "text",
+        "name": "Text",
+        "limit": null,
+        "settings": [
+          {
+            "kind": "setting",
+            "id": "text",
+            "type": "Rich text",
+            "label": "Text",
+            "info": "",
+            "default": ""
+          }
+        ]
+      },
+      {
+        "type": "link",
+        "name": "View details link",
+        "limit": 1,
+        "settings": []
+      }
+    ]
+  },
+  {
+    "type": "flagship",
+    "name": "Featured product band",
+    "addable": true,
+    "max_blocks": null,
+    "availability": [
+      "Not available in: header group, footer group"
+    ],
+    "used_in": [
+      "Home page"
+    ],
+    "settings": [
+      {
+        "kind": "setting",
+        "id": "collection",
+        "type": "Collection",
+        "label": "Collection",
+        "info": "Uses the first product. Leave empty to use the theme setting Brand > Flagship collection.",
+        "default": ""
+      },
+      {
+        "kind": "setting",
+        "id": "image",
+        "type": "Image",
+        "label": "Image",
+        "info": "Leave empty to use the product's featured image.",
+        "default": ""
+      },
+      {
+        "kind": "setting",
+        "id": "eyebrow",
+        "type": "Text",
+        "label": "Eyebrow",
+        "info": "",
+        "default": ""
+      },
+      {
+        "kind": "setting",
+        "id": "heading",
+        "type": "Text",
+        "label": "Heading",
+        "info": "",
+        "default": ""
+      },
+      {
+        "kind": "setting",
+        "id": "text",
+        "type": "Multi-line text",
+        "label": "Text",
+        "info": "",
+        "default": ""
+      },
+      {
+        "kind": "setting",
+        "id": "button_label",
+        "type": "Text",
+        "label": "Button label",
+        "info": "",
+        "default": ""
+      },
+      {
+        "kind": "setting",
+        "id": "feature_1_title",
+        "type": "Text",
+        "label": "Feature 1 title",
+        "info": "",
+        "default": ""
+      },
+      {
+        "kind": "setting",
+        "id": "feature_1_text",
+        "type": "Text",
+        "label": "Feature 1 text",
+        "info": "",
+        "default": ""
+      },
+      {
+        "kind": "setting",
+        "id": "feature_2_title",
+        "type": "Text",
+        "label": "Feature 2 title",
+        "info": "",
+        "default": ""
+      },
+      {
+        "kind": "setting",
+        "id": "feature_2_text",
+        "type": "Text",
+        "label": "Feature 2 text",
+        "info": "",
+        "default": ""
+      },
+      {
+        "kind": "setting",
+        "id": "feature_3_title",
+        "type": "Text",
+        "label": "Feature 3 title",
+        "info": "",
+        "default": ""
+      },
+      {
+        "kind": "setting",
+        "id": "feature_3_text",
+        "type": "Text",
+        "label": "Feature 3 text",
+        "info": "",
+        "default": ""
+      }
+    ],
+    "blocks": []
+  },
+  {
+    "type": "footer",
+    "name": "Footer",
+    "addable": false,
+    "max_blocks": 6,
+    "availability": [
+      "Only in: footer group"
+    ],
+    "used_in": [
+      "Footer group"
+    ],
+    "settings": [
+      {
+        "kind": "header",
+        "text": "Country/region and language"
+      },
+      {
+        "kind": "setting",
+        "id": "enable_country_selector",
+        "type": "Checkbox",
+        "label": "Show country/region selector",
+        "info": "Shown only when the store sells to more than one country. Manage in Settings > Markets.",
+        "default": "On"
+      },
+      {
+        "kind": "setting",
+        "id": "enable_language_selector",
+        "type": "Checkbox",
+        "label": "Show language selector",
+        "info": "Shown only when the store has more than one published language. Manage in Settings > Languages.",
+        "default": "On"
+      },
+      {
+        "kind": "header",
+        "text": "Social media"
+      },
+      {
+        "kind": "setting",
+        "id": "enable_follow_on_shop",
+        "type": "Checkbox",
+        "label": "Show Follow on Shop",
+        "info": "Lets customers follow your store on the Shop app. Requires Shop Pay to be enabled.",
+        "default": "On"
+      },
+      {
+        "kind": "setting",
+        "id": "show_social",
+        "type": "Checkbox",
+        "label": "Show social media icons",
+        "info": "Add links in Theme settings > Social media.",
+        "default": "On"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "newsletter",
+        "name": "Email signup",
+        "limit": 1,
+        "settings": [
+          {
+            "kind": "setting",
+            "id": "heading",
+            "type": "Text",
+            "label": "Heading",
+            "info": "",
+            "default": "Subscribe to our emails"
+          },
+          {
+            "kind": "setting",
+            "id": "text",
+            "type": "Rich text",
+            "label": "Text",
+            "info": "",
+            "default": ""
+          },
+          {
+            "kind": "paragraph",
+            "text": "Subscribers are added to your customer list with the tag \"newsletter\" and \"accepts marketing\" enabled."
+          }
+        ]
+      },
+      {
+        "type": "menu",
+        "name": "Menu",
+        "limit": null,
+        "settings": [
+          {
+            "kind": "setting",
+            "id": "heading",
+            "type": "Text",
+            "label": "Heading",
+            "info": "",
+            "default": "Quick links"
+          },
+          {
+            "kind": "setting",
+            "id": "menu",
+            "type": "Menu",
+            "label": "Menu",
+            "info": "",
+            "default": "footer menu"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "name": "Text",
+        "limit": null,
+        "settings": [
+          {
+            "kind": "setting",
+            "id": "heading",
+            "type": "Text",
+            "label": "Heading",
+            "info": "",
+            "default": ""
+          },
+          {
+            "kind": "setting",
+            "id": "text",
+            "type": "Rich text",
+            "label": "Text",
+            "info": "",
+            "default": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "guarantee",
+    "name": "Guarantee",
+    "addable": true,
+    "max_blocks": null,
+    "availability": [
+      "Not available in: header group, footer group"
+    ],
+    "used_in": [
+      "Home page",
+      "Product (flagship)"
+    ],
+    "settings": [
+      {
+        "kind": "setting",
+        "id": "heading",
+        "type": "Text",
+        "label": "Heading",
+        "info": "Optional. Leave the heading and text blank to hide this band.",
+        "default": "Returns and warranty"
+      },
+      {
+        "kind": "setting",
+        "id": "text",
+        "type": "Multi-line text",
+        "label": "Text",
+        "info": "Placeholder. Replace with your real returns window, warranty, or satisfaction promise. Only describe policies your store actually offers.",
+        "default": "Returns window and warranty terms are listed in our store policies."
+      },
+      {
+        "kind": "setting",
+        "id": "button_label",
+        "type": "Text",
+        "label": "Button label",
+        "info": "",
+        "default": ""
+      },
+      {
+        "kind": "setting",
+        "id": "button_link",
+        "type": "Link",
+        "label": "Button link",
+        "info": "",
+        "default": ""
+      }
+    ],
+    "blocks": []
+  },
+  {
+    "type": "header",
+    "name": "Header",
+    "addable": false,
+    "max_blocks": null,
+    "availability": [
+      "Only in: header group"
+    ],
+    "used_in": [
+      "Header group"
+    ],
+    "settings": [
+      {
+        "kind": "setting",
+        "id": "show_search",
+        "type": "Checkbox",
+        "label": "Show search",
+        "info": "",
+        "default": "On"
+      },
+      {
+        "kind": "setting",
+        "id": "enable_predictive_search",
+        "type": "Checkbox",
+        "label": "Enable search suggestions",
+        "info": "Shows product, collection, page, and article suggestions as shoppers type.",
+        "default": "On"
+      },
+      {
+        "kind": "header",
+        "text": "Country/region and language"
+      },
+      {
+        "kind": "setting",
+        "id": "enable_country_selector",
+        "type": "Checkbox",
+        "label": "Show country/region selector",
+        "info": "Shown only when the store sells to more than one country. Manage in Settings > Markets.",
+        "default": "Off"
+      },
+      {
+        "kind": "setting",
+        "id": "enable_language_selector",
+        "type": "Checkbox",
+        "label": "Show language selector",
+        "info": "Shown only when the store has more than one published language. Manage in Settings > Languages.",
+        "default": "Off"
+      }
+    ],
+    "blocks": []
+  },
+  {
+    "type": "hero",
+    "name": "Hero",
+    "addable": true,
+    "max_blocks": null,
+    "availability": [
+      "Not available in: header group, footer group"
+    ],
+    "used_in": [
+      "Home page"
+    ],
+    "settings": [
+      {
+        "kind": "setting",
+        "id": "image",
+        "type": "Image",
+        "label": "Image",
+        "info": "Leave empty to use the featured image of the first product in Brand > Flagship collection.",
+        "default": ""
+      },
+      {
+        "kind": "setting",
+        "id": "eyebrow",
+        "type": "Text",
+        "label": "Eyebrow",
+        "info": "",
+        "default": ""
+      },
+      {
+        "kind": "setting",
+        "id": "heading",
+        "type": "Text",
+        "label": "Heading",
+        "info": "",
+        "default": ""
+      },
+      {
+        "kind": "setting",
+        "id": "text",
+        "type": "Multi-line text",
+        "label": "Text",
+        "info": "",
+        "default": ""
+      },
+      {
+        "kind": "setting",
+        "id": "button_label",
+        "type": "Text",
+        "label": "Button label",
+        "info": "",
+        "default": ""
+      },
+      {
+        "kind": "setting",
+        "id": "secondary_button_label",
+        "type": "Text",
+        "label": "Secondary button label",
+        "info": "",
+        "default": ""
+      }
+    ],
+    "blocks": []
+  },
+  {
+    "type": "logo-list",
+    "name": "Logo list",
+    "addable": true,
+    "max_blocks": null,
+    "availability": [
+      "Not available in: header group, footer group"
+    ],
+    "used_in": [],
+    "settings": [
+      {
+        "kind": "setting",
+        "id": "heading",
+        "type": "Text",
+        "label": "Heading",
+        "info": "Optional. For example, press mentions or retail partners. Only show logos you have permission to use.",
+        "default": ""
+      }
+    ],
+    "blocks": [
+      {
+        "type": "logo",
+        "name": "Logo",
+        "limit": null,
+        "settings": [
+          {
+            "kind": "setting",
+            "id": "image",
+            "type": "Image",
+            "label": "Image",
+            "info": "",
+            "default": ""
+          },
+          {
+            "kind": "setting",
+            "id": "link",
+            "type": "Link",
+            "label": "Link",
+            "info": "",
+            "default": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "main-404",
+    "name": "404 page",
+    "addable": false,
+    "max_blocks": null,
+    "availability": [],
+    "used_in": [
+      "404 page"
+    ],
+    "settings": [],
+    "blocks": []
+  },
+  {
+    "type": "main-article",
+    "name": "Blog post",
+    "addable": false,
+    "max_blocks": null,
+    "availability": [],
+    "used_in": [
+      "Blog post"
+    ],
+    "settings": [],
+    "blocks": []
+  },
+  {
+    "type": "main-blog",
+    "name": "Blog posts",
+    "addable": false,
+    "max_blocks": null,
+    "availability": [],
+    "used_in": [
+      "Blog"
+    ],
+    "settings": [],
+    "blocks": []
+  },
+  {
+    "type": "main-cart",
+    "name": "Cart",
+    "addable": false,
+    "max_blocks": null,
+    "availability": [],
+    "used_in": [
+      "Cart"
+    ],
+    "settings": [],
+    "blocks": []
+  },
+  {
+    "type": "main-collection",
+    "name": "Collection products",
+    "addable": false,
+    "max_blocks": null,
+    "availability": [],
+    "used_in": [
+      "Collection"
+    ],
+    "settings": [
+      {
+        "kind": "header",
+        "text": "Banner"
+      },
+      {
+        "kind": "setting",
+        "id": "show_collection_image",
+        "type": "Checkbox",
+        "label": "Show collection image",
+        "info": "",
+        "default": "On"
+      },
+      {
+        "kind": "setting",
+        "id": "banner_height",
+        "type": "Dropdown",
+        "label": "Image height",
+        "info": "",
+        "default": "Medium",
+        "options": [
+          "Small",
+          "Medium",
+          "Large"
+        ]
+      },
+      {
+        "kind": "setting",
+        "id": "show_collection_description",
+        "type": "Checkbox",
+        "label": "Show collection description",
+        "info": "",
+        "default": "On"
+      },
+      {
+        "kind": "header",
+        "text": "Products"
+      },
+      {
+        "kind": "setting",
+        "id": "enable_filtering",
+        "type": "Checkbox",
+        "label": "Enable filtering",
+        "info": "Customize filters with the Shopify Search & Discovery app.",
+        "default": "On"
+      },
+      {
+        "kind": "setting",
+        "id": "enable_sorting",
+        "type": "Checkbox",
+        "label": "Enable sorting",
+        "info": "",
+        "default": "On"
+      },
+      {
+        "kind": "setting",
+        "id": "products_per_page",
+        "type": "Slider",
+        "label": "Products per page",
+        "info": "",
+        "default": "24",
+        "range": "8–48"
+      }
+    ],
+    "blocks": []
+  },
+  {
+    "type": "main-contact",
+    "name": "Contact form",
+    "addable": false,
+    "max_blocks": null,
+    "availability": [],
+    "used_in": [
+      "Contact page"
+    ],
+    "settings": [],
+    "blocks": []
+  },
+  {
+    "type": "main-list-collections",
+    "name": "Collections list",
+    "addable": false,
+    "max_blocks": null,
+    "availability": [],
+    "used_in": [
+      "Collections list"
+    ],
+    "settings": [],
+    "blocks": []
+  },
+  {
+    "type": "main-page",
+    "name": "Page",
+    "addable": false,
+    "max_blocks": null,
+    "availability": [],
+    "used_in": [
+      "Page"
+    ],
+    "settings": [],
+    "blocks": []
+  },
+  {
+    "type": "main-password",
+    "name": "Password",
+    "addable": false,
+    "max_blocks": null,
+    "availability": [],
+    "used_in": [
+      "Password page"
+    ],
+    "settings": [],
+    "blocks": []
+  },
+  {
+    "type": "main-product",
+    "name": "Product information",
+    "addable": false,
+    "max_blocks": null,
+    "availability": [],
+    "used_in": [
+      "Default product",
+      "Product (flagship)"
+    ],
+    "settings": [
+      {
+        "kind": "setting",
+        "id": "show_sticky_atc",
+        "type": "Checkbox",
+        "label": "Show sticky add-to-cart bar",
+        "info": "Appears when the main add-to-cart button scrolls out of view. Requires a Buy buttons block.",
+        "default": "On"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "@app",
+        "name": "App blocks",
+        "limit": null,
+        "settings": []
+      },
+      {
+        "type": "title",
+        "name": "Title",
+        "limit": 1,
+        "settings": []
+      },
+      {
+        "type": "price",
+        "name": "Price",
+        "limit": 1,
+        "settings": []
+      },
+      {
+        "type": "description",
+        "name": "Description",
+        "limit": 1,
+        "settings": []
+      },
+      {
+        "type": "buy_buttons",
+        "name": "Buy buttons",
+        "limit": 1,
+        "settings": []
+      },
+      {
+        "type": "trust_strip",
+        "name": "Trust strip",
+        "limit": 1,
+        "settings": [
+          {
+            "kind": "setting",
+            "id": "heading",
+            "type": "Text",
+            "label": "Heading (optional)",
+            "info": "",
+            "default": ""
+          },
+          {
+            "kind": "header",
+            "text": "Trust point 1"
+          },
+          {
+            "kind": "setting",
+            "id": "point_1",
+            "type": "Text",
+            "label": "Text",
+            "info": "Free shipping threshold: enter your real offer, for example \"Free shipping over [amount]\". Only enter a policy your store actually offers. While blank, this point is hidden from shoppers and only a placeholder shows in the theme editor.",
+            "default": ""
+          },
+          {
+            "kind": "setting",
+            "id": "icon_1",
+            "type": "Dropdown",
+            "label": "Icon",
+            "info": "",
+            "default": "Shipping",
+            "options": [
+              "Check",
+              "Shipping",
+              "Returns",
+              "Guarantee",
+              "Secure",
+              "Support",
+              "None"
+            ]
+          },
+          {
+            "kind": "header",
+            "text": "Trust point 2"
+          },
+          {
+            "kind": "setting",
+            "id": "point_2",
+            "type": "Text",
+            "label": "Text",
+            "info": "Returns window: enter your real returns policy, for example \"[number]-day returns\". Only enter a policy your store actually offers. While blank, this point is hidden from shoppers and only a placeholder shows in the theme editor.",
+            "default": ""
+          },
+          {
+            "kind": "setting",
+            "id": "icon_2",
+            "type": "Dropdown",
+            "label": "Icon",
+            "info": "",
+            "default": "Returns",
+            "options": [
+              "Check",
+              "Shipping",
+              "Returns",
+              "Guarantee",
+              "Secure",
+              "Support",
+              "None"
+            ]
+          },
+          {
+            "kind": "header",
+            "text": "Trust point 3"
+          },
+          {
+            "kind": "setting",
+            "id": "point_3",
+            "type": "Text",
+            "label": "Text",
+            "info": "Warranty: enter your real warranty terms, for example \"[length] warranty\". Only enter a policy your store actually offers. While blank, this point is hidden from shoppers and only a placeholder shows in the theme editor.",
+            "default": ""
+          },
+          {
+            "kind": "setting",
+            "id": "icon_3",
+            "type": "Dropdown",
+            "label": "Icon",
+            "info": "",
+            "default": "Guarantee",
+            "options": [
+              "Check",
+              "Shipping",
+              "Returns",
+              "Guarantee",
+              "Secure",
+              "Support",
+              "None"
+            ]
+          },
+          {
+            "kind": "header",
+            "text": "Trust point 4"
+          },
+          {
+            "kind": "setting",
+            "id": "point_4",
+            "type": "Text",
+            "label": "Text",
+            "info": "Shopify checkout is encrypted by default. Edit the wording or leave blank to hide this point.",
+            "default": "Secure checkout"
+          },
+          {
+            "kind": "setting",
+            "id": "icon_4",
+            "type": "Dropdown",
+            "label": "Icon",
+            "info": "",
+            "default": "Secure",
+            "options": [
+              "Check",
+              "Shipping",
+              "Returns",
+              "Guarantee",
+              "Secure",
+              "Support",
+              "None"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "line_item_text",
+        "name": "Line item text",
+        "limit": null,
+        "settings": [
+          {
+            "kind": "setting",
+            "id": "label",
+            "type": "Text",
+            "label": "Label",
+            "info": "",
+            "default": "Custom text"
+          },
+          {
+            "kind": "setting",
+            "id": "placeholder",
+            "type": "Text",
+            "label": "Placeholder",
+            "info": "",
+            "default": ""
+          },
+          {
+            "kind": "setting",
+            "id": "max_length",
+            "type": "Slider",
+            "label": "Maximum characters",
+            "info": "",
+            "default": "20",
+            "range": "0–100"
+          },
+          {
+            "kind": "setting",
+            "id": "required",
+            "type": "Checkbox",
+            "label": "Required",
+            "info": "",
+            "default": "Off"
+          }
+        ]
+      },
+      {
+        "type": "line_item_select",
+        "name": "Line item dropdown",
+        "limit": null,
+        "settings": [
+          {
+            "kind": "setting",
+            "id": "label",
+            "type": "Text",
+            "label": "Label",
+            "info": "",
+            "default": "Option"
+          },
+          {
+            "kind": "setting",
+            "id": "options",
+            "type": "Text",
+            "label": "Options",
+            "info": "Comma-separated list of choices.",
+            "default": "Option 1, Option 2, Option 3"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "name": "Text",
+        "limit": null,
+        "settings": [
+          {
+            "kind": "setting",
+            "id": "text",
+            "type": "Rich text",
+            "label": "Text",
+            "info": "",
+            "default": ""
+          }
+        ]
+      },
+      {
+        "type": "custom_liquid",
+        "name": "Custom Liquid",
+        "limit": null,
+        "settings": [
+          {
+            "kind": "setting",
+            "id": "custom_liquid",
+            "type": "Liquid code",
+            "label": "Liquid code",
+            "info": "Add app snippets or other Liquid code to create advanced customizations.",
+            "default": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "main-search",
+    "name": "Search results",
+    "addable": false,
+    "max_blocks": null,
+    "availability": [],
+    "used_in": [
+      "Search"
+    ],
+    "settings": [
+      {
+        "kind": "setting",
+        "id": "enable_filtering",
+        "type": "Checkbox",
+        "label": "Enable filtering",
+        "info": "Customize filters with the Shopify Search & Discovery app.",
+        "default": "On"
+      },
+      {
+        "kind": "setting",
+        "id": "enable_sorting",
+        "type": "Checkbox",
+        "label": "Enable sorting",
+        "info": "",
+        "default": "On"
+      },
+      {
+        "kind": "setting",
+        "id": "products_per_page",
+        "type": "Slider",
+        "label": "Products per page",
+        "info": "",
+        "default": "24",
+        "range": "8–48"
+      }
+    ],
+    "blocks": []
+  },
+  {
+    "type": "newsletter",
+    "name": "Email signup",
+    "addable": true,
+    "max_blocks": null,
+    "availability": [
+      "Not available in: header group"
+    ],
+    "used_in": [],
+    "settings": [
+      {
+        "kind": "setting",
+        "id": "heading",
+        "type": "Text",
+        "label": "Heading",
+        "info": "",
+        "default": "Subscribe to our emails"
+      },
+      {
+        "kind": "setting",
+        "id": "text",
+        "type": "Rich text",
+        "label": "Text",
+        "info": "",
+        "default": "Be the first to hear about new products and offers."
+      },
+      {
+        "kind": "setting",
+        "id": "button_label",
+        "type": "Text",
+        "label": "Button label",
+        "info": "Leave blank to use the default.",
+        "default": ""
+      },
+      {
+        "kind": "setting",
+        "id": "alignment",
+        "type": "Dropdown",
+        "label": "Alignment",
+        "info": "",
+        "default": "Center",
+        "options": [
+          "Left",
+          "Center"
+        ]
+      },
+      {
+        "kind": "paragraph",
+        "text": "Subscribers are added to your customer list with the tag \"newsletter\" and \"accepts marketing\" enabled."
+      }
+    ],
+    "blocks": []
+  },
+  {
+    "type": "pickup-availability",
+    "name": "Pickup availability",
+    "addable": false,
+    "max_blocks": null,
+    "availability": [],
+    "used_in": [],
+    "settings": [],
+    "blocks": []
+  },
+  {
+    "type": "predictive-search",
+    "name": "Predictive search",
+    "addable": false,
+    "max_blocks": null,
+    "availability": [],
+    "used_in": [],
+    "settings": [],
+    "blocks": []
+  },
+  {
+    "type": "product-faq",
+    "name": "Product FAQ",
+    "addable": true,
+    "max_blocks": null,
+    "availability": [
+      "Not available in: header group, footer group"
+    ],
+    "used_in": [
+      "Product (flagship)"
+    ],
+    "settings": [
+      {
+        "kind": "setting",
+        "id": "heading",
+        "type": "Text",
+        "label": "Heading",
+        "info": "",
+        "default": "FAQ"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "faq_item",
+        "name": "Question",
+        "limit": null,
+        "settings": [
+          {
+            "kind": "setting",
+            "id": "question",
+            "type": "Text",
+            "label": "Question",
+            "info": "",
+            "default": "Question?"
+          },
+          {
+            "kind": "setting",
+            "id": "answer",
+            "type": "Multi-line text",
+            "label": "Answer",
+            "info": "",
+            "default": "Answer."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "product-hotspots",
+    "name": "Product hotspots",
+    "addable": true,
+    "max_blocks": null,
+    "availability": [
+      "Not available in: header group, footer group"
+    ],
+    "used_in": [
+      "Product (flagship)"
+    ],
+    "settings": [
+      {
+        "kind": "setting",
+        "id": "image",
+        "type": "Image",
+        "label": "Diagram image",
+        "info": "Leave empty to use the product's featured image.",
+        "default": ""
+      },
+      {
+        "kind": "setting",
+        "id": "heading",
+        "type": "Text",
+        "label": "Heading",
+        "info": "",
+        "default": "Product details"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "hotspot",
+        "name": "Hotspot",
+        "limit": null,
+        "settings": [
+          {
+            "kind": "setting",
+            "id": "label",
+            "type": "Text",
+            "label": "Label",
+            "info": "",
+            "default": "Feature"
+          },
+          {
+            "kind": "setting",
+            "id": "text",
+            "type": "Multi-line text",
+            "label": "Text",
+            "info": "",
+            "default": "Describe this feature."
+          },
+          {
+            "kind": "setting",
+            "id": "horizontal",
+            "type": "Slider",
+            "label": "Horizontal position",
+            "info": "",
+            "default": "50%",
+            "range": "0–100%"
+          },
+          {
+            "kind": "setting",
+            "id": "vertical",
+            "type": "Slider",
+            "label": "Vertical position",
+            "info": "",
+            "default": "50%",
+            "range": "0–100%"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "product-recommendations",
+    "name": "Product recommendations",
+    "addable": true,
+    "max_blocks": null,
+    "availability": [
+      "Only on: product templates"
+    ],
+    "used_in": [
+      "Default product",
+      "Product (flagship)"
+    ],
+    "settings": [
+      {
+        "kind": "setting",
+        "id": "intent",
+        "type": "Dropdown",
+        "label": "Type",
+        "info": "Related products are generated automatically. Complementary products are chosen in the Search & Discovery app.",
+        "default": "Related products",
+        "options": [
+          "Related products",
+          "Complementary products"
+        ]
+      },
+      {
+        "kind": "setting",
+        "id": "heading",
+        "type": "Text",
+        "label": "Heading",
+        "info": "Leave blank to use the default for the selected type.",
+        "default": ""
+      },
+      {
+        "kind": "setting",
+        "id": "products_to_show",
+        "type": "Slider",
+        "label": "Maximum products to show",
+        "info": "",
+        "default": "4",
+        "range": "2–10"
+      },
+      {
+        "kind": "setting",
+        "id": "columns",
+        "type": "Slider",
+        "label": "Columns on desktop",
+        "info": "",
+        "default": "4",
+        "range": "2–5"
+      }
+    ],
+    "blocks": []
+  },
+  {
+    "type": "product-reviews",
+    "name": "Product reviews",
+    "addable": true,
+    "max_blocks": null,
+    "availability": [
+      "Not available in: header group, footer group"
+    ],
+    "used_in": [
+      "Default product",
+      "Product (flagship)"
+    ],
+    "settings": [
+      {
+        "kind": "setting",
+        "id": "heading",
+        "type": "Text",
+        "label": "Heading",
+        "info": "",
+        "default": "Reviews"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "@app",
+        "name": "App blocks",
+        "limit": null,
+        "settings": []
+      },
+      {
+        "type": "quote",
+        "name": "Quote",
+        "limit": null,
+        "settings": [
+          {
+            "kind": "setting",
+            "id": "quote",
+            "type": "Multi-line text",
+            "label": "Quote",
+            "info": "Only use real customer quotes you have permission to share. Blank quotes are hidden on the storefront.",
+            "default": ""
+          },
+          {
+            "kind": "setting",
+            "id": "author",
+            "type": "Text",
+            "label": "Author",
+            "info": "",
+            "default": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "product-specs",
+    "name": "Product specs",
+    "addable": true,
+    "max_blocks": null,
+    "availability": [
+      "Not available in: header group, footer group"
+    ],
+    "used_in": [
+      "Product (flagship)"
+    ],
+    "settings": [
+      {
+        "kind": "setting",
+        "id": "heading",
+        "type": "Text",
+        "label": "Heading",
+        "info": "",
+        "default": "Specs"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "spec_row",
+        "name": "Spec row",
+        "limit": null,
+        "settings": [
+          {
+            "kind": "setting",
+            "id": "label",
+            "type": "Text",
+            "label": "Label",
+            "info": "",
+            "default": "Spec"
+          },
+          {
+            "kind": "setting",
+            "id": "value",
+            "type": "Text",
+            "label": "Value",
+            "info": "",
+            "default": "Value"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "social-proof",
+    "name": "Social proof",
+    "addable": true,
+    "max_blocks": null,
+    "availability": [
+      "Not available in: header group, footer group"
+    ],
+    "used_in": [
+      "Home page"
+    ],
+    "settings": [
+      {
+        "kind": "setting",
+        "id": "eyebrow",
+        "type": "Text",
+        "label": "Eyebrow",
+        "info": "",
+        "default": ""
+      },
+      {
+        "kind": "setting",
+        "id": "heading",
+        "type": "Text",
+        "label": "Heading",
+        "info": "",
+        "default": "What customers say"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "quote",
+        "name": "Quote",
+        "limit": null,
+        "settings": [
+          {
+            "kind": "setting",
+            "id": "quote",
+            "type": "Multi-line text",
+            "label": "Quote",
+            "info": "Only use real customer quotes you have permission to share. Blank quotes are hidden on the storefront.",
+            "default": ""
+          },
+          {
+            "kind": "setting",
+            "id": "author",
+            "type": "Text",
+            "label": "Author",
+            "info": "",
+            "default": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "ugc-gallery",
+    "name": "UGC gallery",
+    "addable": true,
+    "max_blocks": null,
+    "availability": [
+      "Not available in: header group, footer group"
+    ],
+    "used_in": [],
+    "settings": [
+      {
+        "kind": "setting",
+        "id": "heading",
+        "type": "Text",
+        "label": "Heading",
+        "info": "",
+        "default": "In the wild"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "image",
+        "name": "Image",
+        "limit": null,
+        "settings": [
+          {
+            "kind": "setting",
+            "id": "image",
+            "type": "Image",
+            "label": "Image",
+            "info": "",
+            "default": ""
+          },
+          {
+            "kind": "setting",
+            "id": "caption",
+            "type": "Text",
+            "label": "Caption",
+            "info": "",
+            "default": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "whats-included",
+    "name": "What's included",
+    "addable": true,
+    "max_blocks": null,
+    "availability": [
+      "Not available in: header group, footer group"
+    ],
+    "used_in": [
+      "Product (flagship)"
+    ],
+    "settings": [
+      {
+        "kind": "setting",
+        "id": "heading",
+        "type": "Text",
+        "label": "Heading",
+        "info": "",
+        "default": "What's included"
+      },
+      {
+        "kind": "setting",
+        "id": "text",
+        "type": "Multi-line text",
+        "label": "Text",
+        "info": "",
+        "default": ""
+      }
+    ],
+    "blocks": [
+      {
+        "type": "item",
+        "name": "Item",
+        "limit": null,
+        "settings": [
+          {
+            "kind": "setting",
+            "id": "title",
+            "type": "Text",
+            "label": "Title",
+            "info": "",
+            "default": "Included item"
+          },
+          {
+            "kind": "setting",
+            "id": "text",
+            "type": "Multi-line text",
+            "label": "Text",
+            "info": "",
+            "default": ""
+          }
+        ]
+      }
+    ]
+  }
+]

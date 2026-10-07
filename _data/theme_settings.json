@@ -1,0 +1,383 @@
+{
+  "theme_name": "Plinth",
+  "theme_version": "1.1.0",
+  "groups": [
+    {
+      "name": "Typography",
+      "slug": "typography",
+      "settings": [
+        {
+          "kind": "header",
+          "text": "Fonts"
+        },
+        {
+          "kind": "setting",
+          "id": "type_primary_font",
+          "type": "Font",
+          "label": "Primary",
+          "info": "",
+          "default": "Space Grotesk, weight 500"
+        }
+      ]
+    },
+    {
+      "name": "Logo",
+      "slug": "logo",
+      "settings": [
+        {
+          "kind": "setting",
+          "id": "logo",
+          "type": "Image",
+          "label": "Logo image",
+          "info": "",
+          "default": ""
+        },
+        {
+          "kind": "setting",
+          "id": "logo_width",
+          "type": "Slider",
+          "label": "Desktop logo width",
+          "info": "",
+          "default": "140px",
+          "range": "50–300px"
+        },
+        {
+          "kind": "setting",
+          "id": "logo_width_mobile",
+          "type": "Slider",
+          "label": "Mobile logo width",
+          "info": "",
+          "default": "100px",
+          "range": "40–200px"
+        },
+        {
+          "kind": "setting",
+          "id": "favicon",
+          "type": "Image",
+          "label": "Favicon",
+          "info": "Square image, at least 32 × 32 px.",
+          "default": ""
+        }
+      ]
+    },
+    {
+      "name": "Layout",
+      "slug": "layout",
+      "settings": [
+        {
+          "kind": "setting",
+          "id": "max_page_width",
+          "type": "Dropdown",
+          "label": "Page width",
+          "info": "",
+          "default": "Wide",
+          "options": [
+            "Narrow",
+            "Wide"
+          ]
+        },
+        {
+          "kind": "setting",
+          "id": "min_page_margin",
+          "type": "Slider",
+          "label": "Page margin",
+          "info": "",
+          "default": "24px",
+          "range": "10–100px"
+        }
+      ]
+    },
+    {
+      "name": "Colors",
+      "slug": "colors",
+      "settings": [
+        {
+          "kind": "setting",
+          "id": "background_color",
+          "type": "Color",
+          "label": "Background",
+          "info": "",
+          "default": "#0a0a0b",
+          "swatch": "#0a0a0b"
+        },
+        {
+          "kind": "setting",
+          "id": "foreground_color",
+          "type": "Color",
+          "label": "Foreground",
+          "info": "",
+          "default": "#f2f2f0",
+          "swatch": "#f2f2f0"
+        },
+        {
+          "kind": "setting",
+          "id": "accent_color",
+          "type": "Color",
+          "label": "Accent",
+          "info": "",
+          "default": "#c8ff00",
+          "swatch": "#c8ff00"
+        },
+        {
+          "kind": "setting",
+          "id": "surface_color",
+          "type": "Color",
+          "label": "Surface",
+          "info": "",
+          "default": "#141416",
+          "swatch": "#141416"
+        },
+        {
+          "kind": "setting",
+          "id": "muted_color",
+          "type": "Color",
+          "label": "Muted",
+          "info": "",
+          "default": "#8a8a8a",
+          "swatch": "#8a8a8a"
+        },
+        {
+          "kind": "setting",
+          "id": "border_color",
+          "type": "Color",
+          "label": "Border",
+          "info": "",
+          "default": "#2a2a2c",
+          "swatch": "#2a2a2c"
+        },
+        {
+          "kind": "setting",
+          "id": "input_corner_radius",
+          "type": "Slider",
+          "label": "Input corner radius",
+          "info": "",
+          "default": "2px",
+          "range": "0–10px"
+        }
+      ]
+    },
+    {
+      "name": "Brand",
+      "slug": "brand",
+      "settings": [
+        {
+          "kind": "setting",
+          "id": "brand_name",
+          "type": "Text",
+          "label": "Brand name",
+          "info": "Shown in the header and section eyebrows. Leave blank to use the shop name.",
+          "default": ""
+        },
+        {
+          "kind": "setting",
+          "id": "brand_tagline",
+          "type": "Text",
+          "label": "Brand tagline",
+          "info": "",
+          "default": "Your brand tagline"
+        },
+        {
+          "kind": "setting",
+          "id": "flagship_product",
+          "type": "Product",
+          "label": "Flagship product",
+          "info": "Optional. When set, homepage flagship and hotspot fallbacks use this product instead of the first item in the flagship collection.",
+          "default": ""
+        },
+        {
+          "kind": "setting",
+          "id": "flagship_collection",
+          "type": "Collection",
+          "label": "Flagship collection",
+          "info": "",
+          "default": ""
+        },
+        {
+          "kind": "setting",
+          "id": "addons_collection",
+          "type": "Collection",
+          "label": "Add-ons collection",
+          "info": "",
+          "default": ""
+        },
+        {
+          "kind": "setting",
+          "id": "cross_sell_heading",
+          "type": "Text",
+          "label": "Cart cross-sell heading",
+          "info": "",
+          "default": "You may also like"
+        },
+        {
+          "kind": "setting",
+          "id": "density",
+          "type": "Dropdown",
+          "label": "Section density",
+          "info": "",
+          "default": "Default",
+          "options": [
+            "Compact",
+            "Default",
+            "Comfortable"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Header",
+      "slug": "header",
+      "settings": [
+        {
+          "kind": "setting",
+          "id": "header_menu",
+          "type": "Menu",
+          "label": "Menu",
+          "info": "",
+          "default": "main-menu menu"
+        },
+        {
+          "kind": "setting",
+          "id": "customer_account_menu",
+          "type": "Menu",
+          "label": "Customer account menu",
+          "info": "",
+          "default": "customer-account-main-menu menu"
+        }
+      ]
+    },
+    {
+      "name": "Footer",
+      "slug": "footer",
+      "settings": [
+        {
+          "kind": "setting",
+          "id": "footer_menu",
+          "type": "Menu",
+          "label": "Menu",
+          "info": "",
+          "default": "footer menu"
+        },
+        {
+          "kind": "setting",
+          "id": "show_payment_icons",
+          "type": "Checkbox",
+          "label": "Show payment icons",
+          "info": "",
+          "default": "On"
+        }
+      ]
+    },
+    {
+      "name": "Social media",
+      "slug": "social-media",
+      "settings": [
+        {
+          "kind": "header",
+          "text": "Social accounts"
+        },
+        {
+          "kind": "setting",
+          "id": "social_facebook_link",
+          "type": "Text",
+          "label": "Facebook",
+          "info": "",
+          "default": ""
+        },
+        {
+          "kind": "setting",
+          "id": "social_instagram_link",
+          "type": "Text",
+          "label": "Instagram",
+          "info": "",
+          "default": ""
+        },
+        {
+          "kind": "setting",
+          "id": "social_tiktok_link",
+          "type": "Text",
+          "label": "TikTok",
+          "info": "",
+          "default": ""
+        },
+        {
+          "kind": "setting",
+          "id": "social_twitter_link",
+          "type": "Text",
+          "label": "X (Twitter)",
+          "info": "",
+          "default": ""
+        },
+        {
+          "kind": "setting",
+          "id": "social_threads_link",
+          "type": "Text",
+          "label": "Threads",
+          "info": "",
+          "default": ""
+        },
+        {
+          "kind": "setting",
+          "id": "social_youtube_link",
+          "type": "Text",
+          "label": "YouTube",
+          "info": "",
+          "default": ""
+        },
+        {
+          "kind": "setting",
+          "id": "social_pinterest_link",
+          "type": "Text",
+          "label": "Pinterest",
+          "info": "",
+          "default": ""
+        },
+        {
+          "kind": "setting",
+          "id": "social_snapchat_link",
+          "type": "Text",
+          "label": "Snapchat",
+          "info": "",
+          "default": ""
+        },
+        {
+          "kind": "setting",
+          "id": "social_tumblr_link",
+          "type": "Text",
+          "label": "Tumblr",
+          "info": "",
+          "default": ""
+        },
+        {
+          "kind": "setting",
+          "id": "social_vimeo_link",
+          "type": "Text",
+          "label": "Vimeo",
+          "info": "",
+          "default": ""
+        }
+      ]
+    },
+    {
+      "name": "Cart",
+      "slug": "cart",
+      "settings": [
+        {
+          "kind": "setting",
+          "id": "show_cart_note",
+          "type": "Checkbox",
+          "label": "Enable order notes",
+          "info": "",
+          "default": "Off"
+        },
+        {
+          "kind": "setting",
+          "id": "show_gift_card_recipient",
+          "type": "Checkbox",
+          "label": "Show recipient information form for gift card products",
+          "info": "Lets customers send a gift card to someone by email, with an optional message and send date. Dynamic checkout buttons are hidden on gift card products while this is on.",
+          "default": "On"
+        }
+      ]
+    }
+  ]
+}

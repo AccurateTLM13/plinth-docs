@@ -1,0 +1,4 @@
+<figure class="shot{% if include.narrow %} shot--narrow{% endif %}">
+  <img src="{{ include.src | relative_url }}" alt="{{ include.alt }}" width="{{ include.width }}" height="{{ include.height }}" loading="{{ include.loading | default: 'lazy' }}" decoding="async">
+  <figcaption>{{ include.caption }}</figcaption>
+</figure>

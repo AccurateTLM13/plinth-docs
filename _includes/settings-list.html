@@ -1,0 +1,32 @@
+{%- comment -%}
+  Renders a list of theme or section settings from the generated data.
+  include.settings: array from theme_settings.json / sections.json
+  include.subhead: heading level for "header" settings (default 3)
+{%- endcomment -%}
+{%- assign subhead = include.subhead | default: 3 -%}
+{%- assign open = false -%}
+{%- for s in include.settings -%}
+  {%- if s.kind == "header" -%}
+    {%- if open %}</ul>{% assign open = false %}{% endif %}
+    <h{{ subhead }} class="settings-subhead">{{ s.text }}</h{{ subhead }}>
+  {%- elsif s.kind == "paragraph" -%}
+    {%- if open %}</ul>{% assign open = false %}{% endif %}
+    <p class="settings-note">{{ s.text }}</p>
+  {%- else -%}
+    {%- unless open %}<ul class="settings" role="list">{% assign open = true %}{% endunless %}
+    <li class="setting">
+      <p class="setting__head"><span class="setting__label">{{ s.label }}</span> <span class="setting__type">{{ s.type }}</span></p>
+      {%- if s.info != "" %}<p class="setting__info">{{ s.info }}</p>{% endif %}
+      {%- assign extra = site.data.setting_notes[s.id] -%}
+      {%- if include.global and extra %}<p class="setting__info"><strong>Note:</strong> {{ extra }}</p>{% endif %}
+      {%- if s.options or s.range or s.default != "" %}
+      <dl class="setting__meta">
+        {%- if s.default != "" %}<div><dt>Default</dt><dd>{% if s.swatch %}<span class="swatch" style="background:{{ s.swatch }}" aria-hidden="true"></span>{% endif %}{{ s.default }}</dd></div>{% endif %}
+        {%- if s.range %}<div><dt>Range</dt><dd>{{ s.range }}</dd></div>{% endif %}
+        {%- if s.options %}<div><dt>Choices</dt><dd>{{ s.options | join: ", " }}</dd></div>{% endif %}
+      </dl>
+      {%- endif %}
+    </li>
+  {%- endif -%}
+{%- endfor -%}
+{%- if open %}</ul>{% endif -%}

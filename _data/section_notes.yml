@@ -1,0 +1,208 @@
+# Hand-written descriptions for the Sections and blocks reference.
+# Keys are section file names. Settings and blocks come from sections.json,
+# which tools/generate-reference.py builds from the theme schema.
+# category must match one of the ids in _data/section_categories.yml.
+
+announcement-bar:
+  category: chrome
+  summary: A slim bar above the header for one short message, with an optional link.
+  tips:
+    - Keep it to one line on mobile. About 40 to 60 characters fits most phones.
+    - Only announce offers you actually run, such as a real free-shipping threshold.
+header:
+  category: chrome
+  summary: Your logo or brand name, the main menu, search, account and cart buttons. On smaller screens the menu moves into an accessible slide-out drawer.
+  tips:
+    - Choose the menu in Theme settings > Header. Menus support three levels, which show as dropdowns on desktop and expandable lists on mobile.
+    - The logo and its width are set in Theme settings > Logo. Without a logo, the header shows the brand name.
+    - The country/region and language selectors only appear when your store has more than one market or language.
+footer:
+  category: chrome
+  summary: The bottom of every page, with up to six blocks (email signup, menus, text) and a bottom bar for selectors, social icons, Follow on Shop, payment icons and copyright.
+  tips:
+    - Social icons use the links in Theme settings > Social media. They're hidden when no links are set.
+    - Payment icons follow the payment methods enabled in your store. Turn them off in Theme settings > Footer.
+    - Follow on Shop needs Shop Pay to be turned on for your store.
+hero:
+  category: home
+  summary: A large opening banner with an eyebrow line, heading, text, two buttons and an image.
+  tips:
+    - Leave the image empty to use the featured image of your flagship product.
+    - The main button links to the flagship product (Theme settings > Brand > Flagship product). The secondary button links to the add-ons collection, or to all products.
+    - Keep the heading short. Two short lines read best on mobile.
+flagship:
+  category: home
+  summary: A feature band that spotlights one product, with an image, text, a button and up to three short feature points.
+  tips:
+    - It uses Theme settings > Brand > Flagship product when set. Otherwise it uses the first product in the selected collection.
+    - Feature points with a blank title are hidden.
+featured-product:
+  category: home
+  summary: A complete, shoppable product on any page, with its gallery, price, variant picker and buy buttons.
+  tips:
+    - Use the blocks to choose what shows and in what order. The "View details" link takes shoppers to the full product page.
+    - It shows a placeholder in the editor until you pick a product.
+feature-grid:
+  category: story
+  summary: A heading plus a grid of short feature or benefit cards.
+  tips:
+    - Three or six features make even rows on desktop.
+    - The section hides itself when it has no heading and no features.
+addons-grid:
+  category: story
+  summary: A grid of product cards from a collection, each linking to its product page. Good for accessories, refills and add-ons.
+  tips:
+    - Leave the collection empty to use Theme settings > Brand > Add-ons collection, which also feeds the cart drawer suggestions.
+    - On a product page it automatically skips the product being viewed.
+social-proof:
+  category: story
+  summary: Customer quotes with an author line.
+  tips:
+    - Only add real quotes you have permission to share. Blank quotes are hidden on your store and show a reminder in the editor.
+comparison:
+  category: story
+  summary: A comparison table with up to three columns and one row per feature.
+  tips:
+    - Keep values accurate and checkable. Policy rows such as warranty are optional, so use your real terms or remove the row.
+    - On small screens the table scrolls sideways instead of squeezing the text.
+guarantee:
+  category: story
+  summary: A short reassurance band about returns, warranty or satisfaction, with an optional button.
+  tips:
+    - The default text is a placeholder. Replace it with your real policy, or clear the heading and text to hide the band.
+    - Link the button to your refund or warranty policy page.
+logo-list:
+  category: story
+  summary: A row of logos, for example retail partners or press mentions, with optional links.
+  tips:
+    - Only show logos you have permission to use.
+    - Upload logos in SVG or transparent PNG. Single-color versions look best on the dark default color scheme.
+ugc-gallery:
+  category: story
+  summary: An image gallery with captions, for customer or community photos.
+  tips:
+    - Ask permission before posting customer photos, and credit them in the caption.
+    - Add alt text to each image in Content > Files.
+whats-included:
+  category: story
+  summary: A checklist of what's in the box, with a title and short description per item.
+  tips:
+    - List every physical item, including cables and tools. It cuts down on "is X included?" questions.
+newsletter:
+  category: story
+  summary: An email signup form. Subscribers are added to your customer list with email marketing accepted.
+  tips:
+    - Shoppers see a success message on the page after subscribing, with no extra app needed.
+    - The footer also has an Email signup block, so you don't need both on the same page.
+main-product:
+  category: product
+  summary: The main product area, with the media gallery on one side and blocks you can reorder on the other.
+  tips:
+    - Keep the Buy buttons block. Variant picker, quantity, add to cart, subscriptions, gift card recipient form and pickup availability all live in it.
+    - Line item blocks add custom fields (like engraving text) to the order. Add them to a product template used only by products that need them.
+    - Trust points are blank by default and hidden until you enter a real policy.
+    - The sticky add-to-cart bar appears on scroll and uses the same form, so options and validation still apply.
+product-recommendations:
+  category: product
+  summary: Related or complementary products, loaded after the page so it doesn't slow the first view.
+  tips:
+    - Related products are chosen automatically by Shopify.
+    - Complementary products are picked by you in the Shopify Search & Discovery app. The section stays hidden when there's nothing to show.
+    - Add the section twice to show both types, as the default product templates do.
+product-hotspots:
+  category: product
+  summary: An image with clickable hotspot dots. Shoppers select a dot to read about that part of the product.
+  tips:
+    - Set each hotspot's position with the horizontal and vertical sliders. Preview on mobile, since the image gets smaller.
+    - Hotspots without a label are hidden. Each dot has a large tap area, works with the keyboard and is named by its label for screen readers.
+product-specs:
+  category: product
+  summary: A two-column specifications table.
+  tips:
+    - Use a consistent unit style, for example "1.2 kg" everywhere.
+product-faq:
+  category: product
+  summary: Expandable questions and answers about the product.
+  tips:
+    - Answers open and close without JavaScript, and screen readers announce the open or closed state.
+product-reviews:
+  category: product
+  summary: A home for your reviews app's block, with optional hand-picked quotes.
+  tips:
+    - Install a reviews app and add its block here. Until there's an app block or a quote, the section only shows a hint in the editor.
+main-collection:
+  category: pages
+  summary: A collection page with an optional banner (image and description), filters, sorting and a paginated product grid.
+  tips:
+    - Set up filters in the Shopify Search & Discovery app. Turn filtering or sorting off here if you don't need them.
+    - The banner image comes from the collection's image in Products > Collections.
+main-search:
+  category: pages
+  summary: Search results with filters and sorting for products, plus matching pages and blog posts.
+  tips:
+    - Search filters are also managed in the Search & Discovery app.
+main-cart:
+  category: pages
+  summary: The full cart page, with product lines, quantity changes, discounts, an optional order note and the checkout button.
+  tips:
+    - Turn on order notes in Theme settings > Cart.
+main-list-collections:
+  category: pages
+  summary: Lists all your collections as cards.
+  tips:
+    - Add an image to each collection in Products > Collections so every card has a picture.
+main-page:
+  category: pages
+  summary: Shows the title and content of a standard page.
+  tips:
+    - Add sections such as Feature grid or Custom Liquid under it to build richer pages without code.
+main-contact:
+  category: pages
+  summary: The page content followed by Shopify's contact form (name, email, phone, message).
+  tips:
+    - Assign the "contact" template to your Contact page in Online Store > Pages. Messages go to your store's sender email.
+main-blog:
+  category: pages
+  summary: Lists the posts in a blog, with images, dates and excerpts.
+  tips:
+    - Set an excerpt on each post for neat, even cards.
+main-article:
+  category: pages
+  summary: A single blog post, with its image, author, date and content.
+  tips:
+    - Add alt text to the featured image of each post.
+main-404:
+  category: pages
+  summary: The "page not found" page, with a link back to shopping.
+  tips:
+    - Add a Featured product or Add-ons grid section below it to keep lost visitors browsing.
+main-password:
+  category: pages
+  summary: The password page shown while your store is locked, with your password message and a password form.
+  tips:
+    - Edit the message in Online Store > Preferences > Password protection.
+apps:
+  category: utility
+  summary: An empty container for app blocks, available on every template.
+  tips:
+    - Use it for apps that add a block (reviews, wishlists, size guides) where the main product section isn't the right place.
+custom-liquid:
+  category: utility
+  summary: Paste Liquid or HTML for advanced custom content, such as an app snippet or an embed.
+  tips:
+    - Code pasted here isn't checked by the theme. Test it on a copy of your theme first.
+cart-drawer:
+  category: system
+  summary: The slide-out cart that opens when a shopper adds a product. It's always part of the theme layout, so you don't add it yourself.
+  tips:
+    - Suggestions come from Theme settings > Brand > Add-ons collection, with the heading from "Cart cross-sell heading". Items already in the cart are hidden, and up to three show at once.
+predictive-search:
+  category: system
+  summary: Supplies the search suggestions shown as shoppers type. It works behind the scenes and doesn't appear in the editor.
+  tips:
+    - Turn suggestions on or off in the Header section with "Enable search suggestions".
+pickup-availability:
+  category: system
+  summary: Supplies the in-store pickup details on product pages. It works behind the scenes and doesn't appear in the editor.
+  tips:
+    - Pickup shows only when at least one location offers local pickup and has the variant in stock. See the Product page guide.

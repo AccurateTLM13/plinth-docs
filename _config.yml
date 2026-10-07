@@ -1,0 +1,38 @@
+title: Plinth Docs
+description: Documentation and support for Plinth, a bold, fast Shopify theme.
+url: https://accuratetlm13.github.io
+baseurl: /plinth-docs
+lang: en
+theme_version: "1.1.0"
+github_repo: AccurateTLM13/plinth-docs
+
+# ---------------------------------------------------------------------------
+# SUPPORT FORM — the only value you need to change to turn the form on.
+#
+# PLACEHOLDER: `endpoint` is intentionally empty, so the support page shows
+# a notice and points people to GitHub issues instead.
+#
+# To activate: create a form at a form service (for example Formspree, Basin
+# or Web3Forms), paste the form's POST/action URL below, commit, and GitHub
+# Pages rebuilds the site in about a minute. See README.md for details.
+# ---------------------------------------------------------------------------
+support_form:
+  endpoint: ""                 # e.g. "https://formspree.io/f/xxxxxxxx"
+  honeypot_field: "_gotcha"    # spam trap field name your service expects
+  hidden_fields: {}            # extra hidden inputs, e.g. { access_key: "..." } for Web3Forms
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  auto_ids: true
+  hard_wrap: false
+  syntax_highlighter_opts:
+    disable: true
+
+exclude:
+  - README.md
+  - tools/
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
+  - .github/
