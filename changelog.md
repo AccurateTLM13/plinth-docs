@@ -5,6 +5,14 @@ permalink: /changelog/
 lede: What's new in each version of Plinth.
 description: Plinth release notes.
 ---
+## 1.1.2
+
+*October 2026*
+
+### Changed
+
+- **Demo content renamed.** The demo brand in the preset templates is now Halvard, and the featured demo product is the Halvard Fell. Only the sample text changed. Settings and sections work as before, and none of your own content is affected.
+
 ## 1.1.1
 
 *October 2026*
