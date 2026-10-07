@@ -16,10 +16,12 @@ header:
     - Choose the menu in Theme settings > Header. Menus support three levels, which show as dropdowns on desktop and expandable lists on mobile.
     - The logo and its width are set in Theme settings > Logo. Without a logo, the header shows the brand name.
     - The country/region and language selectors only appear when your store has more than one market or language.
+    - Your brand tagline (Theme settings > Brand) appears next to the logo on screens 990px and wider. It's hidden on smaller screens so it never crowds the menu, logo or cart, and long taglines are shortened to two lines. Turn it off with "Show brand tagline".
 footer:
   category: chrome
-  summary: The bottom of every page, with up to six blocks (email signup, menus, text) and a bottom bar for selectors, social icons, Follow on Shop, payment icons and copyright.
+  summary: The bottom of every page, with an optional brand row (your logo or brand name with your tagline), up to six blocks (email signup, menus, text) and a bottom bar for selectors, social icons, Follow on Shop, payment icons and copyright.
   tips:
+    - The brand row appears when you've entered a brand tagline in Theme settings > Brand and "Show brand tagline" is on. Leave the tagline blank to hide it.
     - Social icons use the links in Theme settings > Social media. They're hidden when no links are set.
     - Payment icons follow the payment methods enabled in your store. Turn them off in Theme settings > Footer.
     - Follow on Shop needs Shop Pay to be turned on for your store.

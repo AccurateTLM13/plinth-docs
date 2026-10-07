@@ -5,6 +5,14 @@ permalink: /changelog/
 lede: What's new in each version of Plinth.
 description: Plinth release notes.
 ---
+## 1.1.1
+
+*October 2026*
+
+### New
+
+- **Brand tagline in the header and footer.** The Brand tagline setting (Theme settings > Brand) now shows next to your logo on screens 990px and wider, and with your logo or brand name at the top of the footer. Each section has a "Show brand tagline" setting, and nothing shows while the tagline is blank. The tagline is now blank by default.
+
 ## 1.1.0
 
 *October 2026*

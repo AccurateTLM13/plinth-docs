@@ -15,7 +15,8 @@ body:
       label: Theme version
       description: Shown in Online Store > Themes.
       options:
-        - "1.1.0 (latest)"
+        - "1.1.1 (latest)"
+        - "1.1.0"
         - An older version
         - I'm not sure
     validations:

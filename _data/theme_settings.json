@@ -1,6 +1,6 @@
 {
   "theme_name": "Plinth",
-  "theme_version": "1.1.0",
+  "theme_version": "1.1.1",
   "groups": [
     {
       "name": "Typography",
@@ -173,8 +173,8 @@
           "id": "brand_tagline",
           "type": "Text",
           "label": "Brand tagline",
-          "info": "",
-          "default": "Your brand tagline"
+          "info": "A short line about your brand. Shown next to the logo in the header on larger screens, and under your brand name at the top of the footer. Turn it off in the Header or Footer section settings. Leave blank to hide it everywhere.",
+          "default": ""
         },
         {
           "kind": "setting",

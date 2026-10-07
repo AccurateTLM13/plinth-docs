@@ -65,6 +65,7 @@ Without a logo, the header shows your brand name in bold text.
 ## 5. Set your brand name and colors
 
 - **Brand name:** in **Theme settings > Brand**, enter the name to show in the header and in small "eyebrow" labels above section headings. Leave it blank to use your store name from **Settings > General**.
+- **Brand tagline:** a short line about your brand, also in **Theme settings > Brand**. It appears next to your logo on larger screens and at the top of the footer. Leave it blank if you don't want one. You can turn it off separately in the Header and Footer sections.
 - **Colors:** in **Theme settings > Colors**, set background, text (foreground), accent, surface, muted and border colors. Keep strong contrast between text and background.
 - **Font:** in **Theme settings > Typography**, choose your font.
 

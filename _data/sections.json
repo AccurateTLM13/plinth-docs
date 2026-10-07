@@ -495,6 +495,18 @@
     "settings": [
       {
         "kind": "header",
+        "text": "Brand"
+      },
+      {
+        "kind": "setting",
+        "id": "show_tagline",
+        "type": "Checkbox",
+        "label": "Show brand tagline",
+        "info": "Shows your logo or brand name with the tagline at the top of the footer. Set the text in Theme settings > Brand.",
+        "default": "On"
+      },
+      {
+        "kind": "header",
         "text": "Country/region and language"
       },
       {
@@ -705,6 +717,18 @@
         "label": "Show language selector",
         "info": "Shown only when the store has more than one published language. Manage in Settings > Languages.",
         "default": "Off"
+      },
+      {
+        "kind": "header",
+        "text": "Brand"
+      },
+      {
+        "kind": "setting",
+        "id": "show_tagline",
+        "type": "Checkbox",
+        "label": "Show brand tagline",
+        "info": "Shown next to the logo on screens 990px and wider, and hidden on smaller screens to keep the header clear. Set the text in Theme settings > Brand.",
+        "default": "On"
       }
     ],
     "blocks": []
