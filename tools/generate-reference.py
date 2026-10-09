@@ -130,7 +130,7 @@ theme_settings = {"theme_name": info.get("theme_name"),
 TEMPLATE_NAMES = {"index": "Home page", "product": "Default product",
                   "product.flagship": "Product (flagship)", "collection": "Collection",
                   "list-collections": "Collections list", "search": "Search",
-                  "cart": "Cart", "page": "Page", "page.contact": "Contact page",
+                  "cart": "Cart", "page": "Page", "page.contact": "Contact page", "page.faq": "FAQ page",
                   "blog": "Blog", "article": "Blog post", "404": "404 page",
                   "password": "Password page"}
 used_in = {}

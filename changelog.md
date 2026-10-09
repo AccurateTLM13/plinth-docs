@@ -5,6 +5,18 @@ permalink: /changelog/
 lede: What's new in each version of Plinth.
 description: Plinth release notes.
 ---
+## 1.1.4
+
+*October 2026*
+
+### Changed
+
+- **More readable pages and blog posts.** Pages, blog posts and the blog index now keep text to a comfortable line length (about 70 characters), with more space between paragraphs, headings, lists, quotes, images and tables. Blog posts show the blog name, a larger title and the date and author more clearly, and featured images load at the right size for each screen. The blog index shows each post as a card with its image, title, date and excerpt. Product descriptions use a more compact version of the same text styles.
+
+### New
+
+- **Content width setting.** The Page, Blog post and Blog sections each have a "Content width" setting (Narrow or Normal) to control how wide the text column is.
+
 ## 1.1.3
 
 *October 2026*

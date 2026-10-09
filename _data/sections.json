@@ -862,7 +862,20 @@
     "used_in": [
       "Blog post"
     ],
-    "settings": [],
+    "settings": [
+      {
+        "kind": "setting",
+        "id": "content_width",
+        "type": "Dropdown",
+        "label": "Content width",
+        "info": "",
+        "default": "Normal",
+        "options": [
+          "Narrow",
+          "Normal"
+        ]
+      }
+    ],
     "blocks": []
   },
   {
@@ -874,7 +887,20 @@
     "used_in": [
       "Blog"
     ],
-    "settings": [],
+    "settings": [
+      {
+        "kind": "setting",
+        "id": "content_width",
+        "type": "Dropdown",
+        "label": "Content width",
+        "info": "",
+        "default": "Normal",
+        "options": [
+          "Narrow",
+          "Normal"
+        ]
+      }
+    ],
     "blocks": []
   },
   {
@@ -995,9 +1021,23 @@
     "max_blocks": null,
     "availability": [],
     "used_in": [
+      "FAQ page",
       "Page"
     ],
-    "settings": [],
+    "settings": [
+      {
+        "kind": "setting",
+        "id": "content_width",
+        "type": "Dropdown",
+        "label": "Content width",
+        "info": "",
+        "default": "Normal",
+        "options": [
+          "Narrow",
+          "Normal"
+        ]
+      }
+    ],
     "blocks": []
   },
   {
@@ -1409,6 +1449,7 @@
       "Not available in: header group, footer group"
     ],
     "used_in": [
+      "FAQ page",
       "Product (flagship)"
     ],
     "settings": [
