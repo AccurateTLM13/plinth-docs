@@ -5,6 +5,18 @@ permalink: /changelog/
 lede: What's new in each version of Plinth.
 description: Plinth release notes.
 ---
+## 1.1.5
+
+*October 2026*
+
+### Changed
+
+- **Lighter blog and content pages.** The product form script now loads only on pages that show a product form (product pages and the Featured product section), so pages, blog posts and the blog index load less JavaScript. Blog post and blog index images are requested at sizes closer to how they're displayed, and the first blog index image loads with high priority. Product gallery images now use the same set of image sizes as the hero, Featured product and Product hotspots sections, so when one image appears in more than one section the browser downloads it only once.
+
+### Fixed
+
+- **Spacing above sections that follow page content.** When a page has another section below its content, such as the accordion on the FAQ page, the gap between them is now half as large.
+
 ## 1.1.4
 
 *October 2026*
