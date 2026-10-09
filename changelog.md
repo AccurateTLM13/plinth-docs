@@ -5,6 +5,14 @@ permalink: /changelog/
 lede: What's new in each version of Plinth.
 description: Plinth release notes.
 ---
+## 1.1.3
+
+*October 2026*
+
+### Fixed
+
+- **Buy it now on sold-out products.** The "Buy it now" button no longer shows when the selected variant is sold out or unavailable. It reappears as soon as you choose an available variant.
+
 ## 1.1.2
 
 *October 2026*
