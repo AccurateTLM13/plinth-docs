@@ -5,6 +5,14 @@ permalink: /changelog/
 lede: What's new in each version of Plinth.
 description: Plinth release notes.
 ---
+## 1.1.6
+
+*October 2026*
+
+### Fixed
+
+- **Product recommendations script loads once.** When a product page has both the Related products and Complementary products sections, their shared script is now downloaded and run once instead of twice.
+
 ## 1.1.5
 
 *October 2026*
