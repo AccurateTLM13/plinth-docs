@@ -5,6 +5,14 @@ permalink: /changelog/
 lede: What's new in each version of Plinth.
 description: Plinth release notes.
 ---
+## 1.1.7
+
+*October 2026*
+
+### Fixed
+
+- **Gift card recipient errors clear when you fix them.** After a failed add to cart, an error such as "Email can't be blank" now disappears as soon as you edit that field or untick "send as a gift", instead of staying next to the new input.
+
 ## 1.1.6
 
 *October 2026*
