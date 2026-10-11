@@ -1,7 +1,12 @@
 title: Plinth Docs
+brand: Lemonteed Themes
+support_email: "support@themes.lemonteed.com"   # forwarded to our inbox by Cloudflare Email Routing
 description: Documentation and support for Plinth, a bold, fast Shopify theme.
-url: https://accuratetlm13.github.io
-baseurl: /plinth-docs
+# Served at https://themes.lemonteed.com (custom domain, see the CNAME file).
+# Site root (/) is the Lemonteed Themes landing page; Plinth's docs live under /plinth/
+# so future themes can sit beside it (/<theme>/). Old /<page>/ paths redirect to /plinth/<page>/.
+url: https://themes.lemonteed.com
+baseurl: ""
 lang: en
 theme_version: "1.1.7"
 github_repo: AccurateTLM13/plinth-docs
@@ -26,6 +31,9 @@ support_form:
   max_total_mb: 25
   hidden_fields:               # sent with every request
     theme: "Plinth"            # theme name, as the Theme Store asks for
+
+plugins:
+  - jekyll-redirect-from   # supported on GitHub Pages; makes the old-path redirect stubs
 
 markdown: kramdown
 kramdown:

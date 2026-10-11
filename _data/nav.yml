@@ -1,24 +1,24 @@
 - title: Overview
-  url: /
+  url: /plinth/
 - title: Getting started
-  url: /getting-started/
+  url: /plinth/getting-started/
 - title: Theme settings
-  url: /theme-settings/
+  url: /plinth/theme-settings/
 - title: Sections and blocks
-  url: /sections/
+  url: /plinth/sections/
 - title: Product page
-  url: /product-page/
+  url: /plinth/product-page/
 - title: Cart
-  url: /cart/
+  url: /plinth/cart/
 - title: Filtering and search
-  url: /filtering-and-search/
+  url: /plinth/filtering-and-search/
 - title: Localization
-  url: /localization/
+  url: /plinth/localization/
 - title: Accessibility and performance
-  url: /accessibility-and-performance/
+  url: /plinth/accessibility-and-performance/
 - title: FAQ and troubleshooting
-  url: /faq/
+  url: /plinth/faq/
 - title: Changelog
-  url: /changelog/
+  url: /plinth/changelog/
 - title: Support
-  url: /support/
+  url: /plinth/support/

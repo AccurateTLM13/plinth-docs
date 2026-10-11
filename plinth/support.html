@@ -1,7 +1,8 @@
 ---
 layout: default
 title: Support
-permalink: /support/
+permalink: /plinth/support/
+redirect_from: /support/
 lede: Questions about setting up or using Plinth? We're here to help.
 description: Contact Plinth theme support or open a support request.
 scripts:
@@ -9,11 +10,12 @@ scripts:
 ---
 {%- assign form = site.support_form -%}
 {%- assign endpoint = form.endpoint | strip -%}
+{%- assign support_email = site.support_email | strip -%}
 {%- capture issue_url %}https://github.com/{{ site.github_repo }}/issues/new?template=support.yml{% endcapture -%}
 
 <h2 id="before">Before you get in touch</h2>
 <ul>
-  <li>Check the <a href="{{ '/faq/' | relative_url }}">FAQ and troubleshooting</a> page. Most setup questions are answered there.</li>
+  <li>Check the <a href="{{ '/plinth/faq/' | relative_url }}">FAQ and troubleshooting</a> page. Most setup questions are answered there.</li>
   <li>Make sure you're on the latest version of Plinth (<strong>{{ site.theme_version }}</strong>). Your version is shown in <span class="path">Online Store &gt; Themes</span>.</li>
   <li>If something looks broken, try it on an unedited copy of the theme with apps turned off. That helps us tell a theme issue from an app or code conflict.</li>
 </ul>
@@ -118,18 +120,23 @@ scripts:
   {%- endif %}
 </form>
 
+{%- if support_email != "" %}
+<h2 id="email">Prefer email?</h2>
+<p>Write to <a href="mailto:{{ support_email }}">{{ support_email }}</a>. Include your store's <span class="path">.myshopify.com</span> address, your Plinth version and what you expected to happen. Please don't send passwords, staff account access or customer data.</p>
+{%- endif %}
+
 {%- if endpoint != "" %}
 <h2 id="after">What happens next</h2>
 <ul>
   <li>You'll get an automatic email confirming we've received your request. If it doesn't arrive within a few minutes, check your spam folder. (If you sent the form with JavaScript turned off, we can't send this confirmation, but we still get your message.)</li>
-  <li>We reply from our support address to the email address you gave us.</li>
+  <li>We reply from {% if support_email != "" %}<strong>{{ support_email }}</strong>{% else %}our support address{% endif %} to the email address you gave us. Add it to your contacts so our replies don't land in spam.</li>
 </ul>
 
 <h2 id="privacy">How we handle your message</h2>
 <p>The contact form is sent to a small program we run on <a href="https://www.cloudflare.com/">Cloudflare</a> (a Cloudflare Worker). It checks the form and emails it to our support inbox through <a href="https://resend.com/">Resend</a>, an email delivery service, which also sends your confirmation email.</p>
 <ul>
   <li><strong>What's sent:</strong> your name, email address, store URL, theme version, topic, message and any attached files.</li>
-  <li><strong>Where it's kept:</strong> in our support inbox. The Worker doesn't store your message or files. Resend keeps a copy of the emails it sends for up to 30 days (see <a href="https://resend.com/legal/privacy-policy">Resend's privacy policy</a>).</li>
+  <li><strong>Where it's kept:</strong> in our support inbox.{% if support_email != "" %} Mail you send to {{ support_email }} is forwarded to the same inbox by Cloudflare Email Routing, which doesn't keep a copy.{% endif %} The Worker doesn't store your message or files. Resend keeps a copy of the emails it sends for up to 30 days (see <a href="https://resend.com/legal/privacy-policy">Resend's privacy policy</a>).</li>
   <li><strong>How long:</strong> we delete support emails and their attachments 12 months after your request is resolved, or sooner if you ask us to.</li>
   <li><strong>Spam protection:</strong> <a href="https://www.cloudflare.com/turnstile-privacy-policy/">Cloudflare Turnstile</a> checks that the form is sent by a person, and your IP address is used briefly to limit how many messages can be sent in a minute. We don't store it.</li>
   <li><strong>What we use it for:</strong> only to answer your request. We don't add you to a mailing list or share your details with anyone else.</li>

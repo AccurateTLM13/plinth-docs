@@ -1,7 +1,8 @@
 ---
 layout: default
 title: Theme settings
-permalink: /theme-settings/
+permalink: /plinth/theme-settings/
+redirect_from: /theme-settings/
 lede: Theme settings apply across your whole store. Open them in the theme editor by selecting the gear icon (Theme settings).
 description: A reference for every Plinth theme settings group, with defaults, choices and tips.
 ---
@@ -29,4 +30,4 @@ This page lists every setting in Plinth {{ data.theme_version }}, in the same or
 
 ## Settings in sections
 
-Many options live on individual sections instead, such as search and selectors in the Header, or filtering in Collection products. See [Sections and blocks]({{ '/sections/' | relative_url }}).
+Many options live on individual sections instead, such as search and selectors in the Header, or filtering in Collection products. See [Sections and blocks]({{ '/plinth/sections/' | relative_url }}).

@@ -1,11 +1,12 @@
 ---
 layout: default
 title: Product page guide
-permalink: /product-page/
+permalink: /plinth/product-page/
+redirect_from: /product-page/
 lede: Everything a shopper needs to choose and buy, in one place. Here's how to set up each part.
 description: Variants and swatches, custom line item options, gift cards, subscriptions, pickup, media and product recommendations in Plinth.
 ---
-The product page is built from the **Product information** section plus optional sections around it. Inside Product information you can reorder these blocks: Title, Price, Description, Buy buttons, Trust strip, Line item text, Line item dropdown, Text, Custom Liquid and app blocks. See the [Sections and blocks reference]({{ '/sections/' | relative_url }}#section-main-product) for every setting.
+The product page is built from the **Product information** section plus optional sections around it. Inside Product information you can reorder these blocks: Title, Price, Description, Buy buttons, Trust strip, Line item text, Line item dropdown, Text, Custom Liquid and app blocks. See the [Sections and blocks reference]({{ '/plinth/sections/' | relative_url }}#section-main-product) for every setting.
 
 ## Variants and swatches
 

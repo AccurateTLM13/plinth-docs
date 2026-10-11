@@ -1,7 +1,8 @@
 ---
 layout: default
 title: Cart
-permalink: /cart/
+permalink: /plinth/cart/
+redirect_from: /cart/
 lede: Plinth keeps shoppers moving with a slide-out cart drawer, plus a full cart page.
 description: Cart drawer, add-on suggestions, order notes and discounts in Plinth.
 ---

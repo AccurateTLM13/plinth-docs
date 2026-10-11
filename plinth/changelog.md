@@ -1,7 +1,8 @@
 ---
 layout: default
 title: Changelog
-permalink: /changelog/
+permalink: /plinth/changelog/
+redirect_from: /changelog/
 lede: What's new in each version of Plinth.
 description: Plinth release notes.
 ---

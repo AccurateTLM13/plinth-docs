@@ -1,7 +1,8 @@
 ---
 layout: default
 title: Accessibility and performance
-permalink: /accessibility-and-performance/
+permalink: /plinth/accessibility-and-performance/
+redirect_from: /accessibility-and-performance/
 lede: Plinth is built so more people can shop your store, quickly, on any device. Here's what's built in and what's up to you.
 description: Accessibility and performance features in Plinth, plus a checklist for merchants.
 ---

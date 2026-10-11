@@ -1,7 +1,8 @@
 ---
 layout: default
 title: Sections and blocks
-permalink: /sections/
+permalink: /plinth/sections/
+redirect_from: /sections/
 lede: Sections are the building blocks of each page. Blocks are the smaller pieces inside a section, like a single feature or question.
 description: Every Plinth section, what it does, its key settings, its blocks and tips.
 ---

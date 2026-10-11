@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="{{ site.lang }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title }}</title>
+  <meta name="description" content="{{ page.description | escape }}">
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+  <meta property="og:title" content="{{ page.title | escape }}">
+  <meta property="og:description" content="{{ page.description | escape }}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta name="theme-color" content="#0a0a0b">
+  <link rel="icon" href="{{ '/assets/img/favicon.svg' | relative_url }}" type="image/svg+xml">
+  <link rel="stylesheet" href="{{ '/assets/css/docs.css' | relative_url }}">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="brand" href="{{ '/' | relative_url }}">
+        <span class="brand__mark" aria-hidden="true"></span>
+        <span class="brand__name">{{ site.brand }}</span>
+      </a>
+    </div>
+  </header>
+  <main id="main" class="content content--landing" tabindex="-1">
+    <article class="prose">
+      {{ content }}
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p>{{ site.brand }}. Shopify is a trademark of Shopify Inc.</p>
+    </div>
+  </footer>
+</body>
+</html>

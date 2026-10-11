@@ -105,6 +105,7 @@ a:hover { text-decoration-thickness: 3px; }
 }
 .content { min-width: 0; padding: 1.5rem 0 3rem; }
 .content:focus { outline: none; }
+.content--landing { max-width: 78rem; margin: 0 auto; padding: 2rem 1.25rem 3rem; }
 
 /* Prose */
 .prose { max-width: 48rem; }

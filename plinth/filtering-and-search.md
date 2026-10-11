@@ -1,7 +1,8 @@
 ---
 layout: default
 title: Filtering and search
-permalink: /filtering-and-search/
+permalink: /plinth/filtering-and-search/
+redirect_from: /filtering-and-search/
 lede: Help shoppers find the right product fast, with collection filters, sorting and search suggestions.
 description: Set up collection and search filters, sorting and predictive search in Plinth.
 ---

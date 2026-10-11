@@ -1,7 +1,8 @@
 ---
 layout: default
 title: Localization
-permalink: /localization/
+permalink: /plinth/localization/
+redirect_from: /localization/
 lede: Sell in more countries and languages. Plinth adds the selectors, and Shopify handles prices and translations.
 description: Country, currency and language selectors and translations in Plinth.
 ---

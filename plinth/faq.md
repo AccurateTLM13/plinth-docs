@@ -1,7 +1,8 @@
 ---
 layout: default
 title: FAQ and troubleshooting
-permalink: /faq/
+permalink: /plinth/faq/
+redirect_from: /faq/
 lede: Quick answers to the questions merchants ask most.
 description: Answers to common Plinth questions and fixes for common setup issues.
 ---
@@ -11,7 +12,7 @@ description: Answers to common Plinth questions and fixes for common setup issue
 They use **Theme settings > Brand > Flagship product**. If that's empty, they use the first product in the **Flagship collection**. Pick your hero product there. You can also set a custom image in the Hero section.
 
 ### How do I give my main product the long, detailed page?
-Open the product in **Products**, set **Theme template** to **flagship** and save. Then edit that template in the theme editor (**Products > flagship** in the page selector). See [Getting started]({{ '/getting-started/' | relative_url }}#use-the-productflagship-template).
+Open the product in **Products**, set **Theme template** to **flagship** and save. Then edit that template in the theme editor (**Products > flagship** in the page selector). See [Getting started]({{ '/plinth/getting-started/' | relative_url }}#use-the-productflagship-template).
 
 ### My menu has no dropdowns
 Dropdowns come from nested menu items. In **Content > Menus**, open your main menu and drag items under a parent item. Also check **Theme settings > Header > Menu** is set to that menu.
@@ -54,7 +55,7 @@ Install a reviews app and add its block to the **Product reviews** section. Unti
 Set an **Add-ons collection** in **Theme settings > Brand**. Suggestions skip products already in the cart, so they disappear once everything's added.
 
 ### Where do shoppers enter a discount code?
-At checkout. Automatic discounts and shared discount links apply in the cart. See [Cart > Discounts]({{ '/cart/' | relative_url }}#discounts).
+At checkout. Automatic discounts and shared discount links apply in the cart. See [Cart > Discounts]({{ '/plinth/cart/' | relative_url }}#discounts).
 
 ### Filters don't appear on my collection
 Install **Search & Discovery** and add filters there. Then check **Enable filtering** is on in the **Collection products** section. A filter only shows when the collection has products with values for it.
@@ -77,6 +78,6 @@ Check you're editing the published theme, then select **Save** in the theme edit
 Yes, through **⋯ > Edit code** in your theme library. Duplicate the theme first so you have a backup. Custom code changes aren't covered by theme support, and theme updates won't include them.
 
 ### How do I update Plinth?
-When a new version is available, Shopify shows it in your theme library. Updating adds a new copy of the theme with your settings and content carried over. Review it, then publish. See the [Changelog]({{ '/changelog/' | relative_url }}) for what's new.
+When a new version is available, Shopify shows it in your theme library. Updating adds a new copy of the theme with your settings and content carried over. Review it, then publish. See the [Changelog]({{ '/plinth/changelog/' | relative_url }}) for what's new.
 
-Still stuck? [Contact support]({{ '/support/' | relative_url }}).
+Still stuck? [Contact support]({{ '/plinth/support/' | relative_url }}).

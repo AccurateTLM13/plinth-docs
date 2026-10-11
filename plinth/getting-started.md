@@ -1,7 +1,8 @@
 ---
 layout: default
 title: Getting started
-permalink: /getting-started/
+permalink: /plinth/getting-started/
+redirect_from: /getting-started/
 lede: Get Plinth installed and looking like your brand in about half an hour.
 description: Install Plinth, set up your flagship product and template, menus, logo, favicon and brand name.
 ---
@@ -20,7 +21,7 @@ description: Install Plinth, set up your flagship product and template, menus, l
 
 Plinth is designed around one hero product, called the *flagship*. The home page hero, the featured product band and the product hotspots all use it when you haven't picked something else.
 
-1. Create the product in **Products > Add product**, with its images, variants and price. If it has options like color, set up [swatches]({{ '/product-page/' | relative_url }}#variants-and-swatches) too.
+1. Create the product in **Products > Add product**, with its images, variants and price. If it has options like color, set up [swatches]({{ '/plinth/product-page/' | relative_url }}#variants-and-swatches) too.
 2. In the theme editor, open **Theme settings > Brand** and choose it in **Flagship product**.
 3. Optionally, pick a **Flagship collection**. Sections fall back to the first product in this collection if no flagship product is set.
 4. Pick an **Add-ons collection** with accessories or extras. It powers the Add-ons grid section and the suggestions in the cart drawer.
@@ -86,4 +87,4 @@ The home page starts with a hero, the flagship band, a featured product, a featu
 - Add your social media links in **Theme settings > Social media**.
 - Test your store on a phone: add a product to the cart and go through to checkout.
 
-Next: learn every option in [Theme settings]({{ '/theme-settings/' | relative_url }}).
+Next: learn every option in [Theme settings]({{ '/plinth/theme-settings/' | relative_url }}).

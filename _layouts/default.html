@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  {%- if page.url == "/" -%}
+  {%- if page.url == "/plinth/" -%}
     {%- assign full_title = site.title | append: " · Shopify theme documentation" -%}
   {%- else -%}
     {%- assign full_title = page.title | append: " · " | append: site.title -%}
@@ -24,13 +24,13 @@
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="site-header__inner">
-      <a class="brand" href="{{ '/' | relative_url }}">
+      <a class="brand" href="{{ '/plinth/' | relative_url }}">
         <span class="brand__mark" aria-hidden="true"></span>
         <span class="brand__name">Plinth</span>
         <span class="brand__sub">Docs</span>
       </a>
       <span class="version-badge">v{{ site.theme_version }}</span>
-      <a class="header-link" href="{{ '/support/' | relative_url }}">Get support</a>
+      <a class="header-link" href="{{ '/plinth/support/' | relative_url }}">Get support</a>
     </div>
   </header>
   <div class="layout">
@@ -71,8 +71,8 @@
   </div>
   <footer class="site-footer">
     <div class="site-footer__inner">
-      <p>Plinth {{ site.theme_version }} documentation. Questions? <a href="{{ '/support/' | relative_url }}">Contact support</a> or <a href="https://github.com/{{ site.github_repo }}/issues">browse support issues</a>.</p>
-      <p>Screenshots show the Plinth demo store. Its product images are AI-generated illustrations, not product photos. Shopify is a trademark of Shopify Inc.</p>
+      <p>Plinth {{ site.theme_version }} documentation. Questions? <a href="{{ '/plinth/support/' | relative_url }}">Contact support</a> or <a href="https://github.com/{{ site.github_repo }}/issues">browse support issues</a>.</p>
+      <p>Plinth is a <a href="{{ '/' | relative_url }}">Lemonteed Themes</a> theme. Screenshots show the Plinth demo store. Its product images are AI-generated illustrations, not product photos. Shopify is a trademark of Shopify Inc.</p>
     </div>
   </footer>
   <script src="{{ '/assets/js/docs.js' | relative_url }}" defer></script>
