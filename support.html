@@ -30,7 +30,7 @@ scripts:
 <form class="form" id="support-form" method="post" accept-charset="utf-8" enctype="multipart/form-data"
   {%- if endpoint != "" %} action="{{ endpoint | escape }}"{% endif %}
   data-support-form data-issue-url="{{ issue_url }}" data-honeypot="{{ form.honeypot_field | escape }}"
-  data-max-files="{{ form.max_files }}" data-max-file-mb="{{ form.max_file_mb }}"
+  data-max-files="{{ form.max_files }}" data-max-file-mb="{{ form.max_file_mb }}" data-max-total-mb="{{ form.max_total_mb }}"
   aria-describedby="form-required-note">
   <div class="form-status" id="form-status" tabindex="-1" hidden data-form-status></div>
   <p id="form-required-note">All fields are required unless marked optional.</p>
@@ -87,7 +87,7 @@ scripts:
     </div>
     <div class="field">
       <label for="support-files">Screenshots or files <span class="optional">(optional)</span></label>
-      <span class="hint" id="support-files-hint">Up to {{ form.max_files }} files, {{ form.max_file_mb }} MB each: PNG, JPG, GIF, WebP, PDF or ZIP. A screenshot of the problem helps us a lot. Don't attach anything with passwords or customer details.</span>
+      <span class="hint" id="support-files-hint">Up to {{ form.max_files }} files, {{ form.max_file_mb }} MB each and {{ form.max_total_mb }} MB in total: PNG, JPG, GIF, WebP, PDF or ZIP. A screenshot of the problem helps us a lot. Don't attach anything with passwords or customer details.</span>
       <input id="support-files" name="attachments[]" type="file" multiple
         accept=".png,.jpg,.jpeg,.gif,.webp,.pdf,.zip,image/png,image/jpeg,image/gif,image/webp,application/pdf,application/zip"
         aria-describedby="support-files-hint support-files-error">
@@ -100,26 +100,39 @@ scripts:
     {%- for f in form.hidden_fields %}
     <input type="hidden" name="{{ f[0] | escape }}" value="{{ f[1] | escape }}">
     {%- endfor %}
+    {%- if endpoint != "" and form.turnstile_site_key != "" %}
+    <div class="field" id="support-check" tabindex="-1">
+      <p class="hint" id="support-check-hint">Before you send, a quick automatic check (Cloudflare Turnstile) confirms you're not a bot. Usually there's nothing to click.</p>
+      <div class="cf-turnstile" data-sitekey="{{ form.turnstile_site_key | escape }}" data-theme="auto" data-size="flexible" data-response-field-name="cf-turnstile-response"></div>
+      <p class="field__error" id="support-check-error" hidden></p>
+      <noscript><p class="callout">JavaScript is off, so the bot check can't run. You can still send the form and we'll get your message, but we can't send you a confirmation email.</p></noscript>
+    </div>
+    {%- endif %}
     <button class="btn btn--accent" type="submit" data-submit>Send message</button>
   </fieldset>
   {%- if endpoint != "" %}
   <noscript><p>When you send the form, you'll be taken to a confirmation page.</p></noscript>
+  {%- if form.turnstile_site_key != "" %}
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  {%- endif %}
   {%- endif %}
 </form>
 
 {%- if endpoint != "" %}
 <h2 id="after">What happens next</h2>
 <ul>
-  <li>You'll get an automatic email confirming we've received your request. If it doesn't arrive within a few minutes, check your spam folder.</li>
-  <li>We reply from our support inbox to the email address you gave us.</li>
+  <li>You'll get an automatic email confirming we've received your request. If it doesn't arrive within a few minutes, check your spam folder. (If you sent the form with JavaScript turned off, we can't send this confirmation, but we still get your message.)</li>
+  <li>We reply from our support address to the email address you gave us.</li>
 </ul>
 
 <h2 id="privacy">How we handle your message</h2>
-<p>The contact form is handled by <a href="https://www.formbackend.com/">FormBackend</a>, a form service. When you send it, your name, email address, store URL, theme version, topic, message and any attached files are sent to FormBackend, which stores them and emails them to our support inbox. FormBackend's handling of that data is covered by its <a href="https://www.formbackend.com/privacy">privacy policy</a>.</p>
+<p>The contact form is sent to a small program we run on <a href="https://www.cloudflare.com/">Cloudflare</a> (a Cloudflare Worker). It checks the form and emails it to our support inbox through <a href="https://resend.com/">Resend</a>, an email delivery service, which also sends your confirmation email.</p>
 <ul>
-  <li>We use what you send only to answer your request. We don't add you to a mailing list or share your details with anyone else.</li>
-  <li>Submissions and attached files are deleted automatically from FormBackend after 90 days. Our replies stay in our support inbox.</li>
-  <li>To have your request deleted sooner, ask us in a reply or with a new request.</li>
+  <li><strong>What's sent:</strong> your name, email address, store URL, theme version, topic, message and any attached files.</li>
+  <li><strong>Where it's kept:</strong> in our support inbox. The Worker doesn't store your message or files. Resend keeps a copy of the emails it sends for up to 30 days (see <a href="https://resend.com/legal/privacy-policy">Resend's privacy policy</a>).</li>
+  <li><strong>How long:</strong> we delete support emails and their attachments 12 months after your request is resolved, or sooner if you ask us to.</li>
+  <li><strong>Spam protection:</strong> <a href="https://www.cloudflare.com/turnstile-privacy-policy/">Cloudflare Turnstile</a> checks that the form is sent by a person, and your IP address is used briefly to limit how many messages can be sent in a minute. We don't store it.</li>
+  <li><strong>What we use it for:</strong> only to answer your request. We don't add you to a mailing list or share your details with anyone else.</li>
   <li>Never send passwords, staff account access or customer data. If we need store access, we'll ask for a collaborator request through Shopify instead.</li>
 </ul>
 {%- endif %}

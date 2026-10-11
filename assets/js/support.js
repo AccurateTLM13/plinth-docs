@@ -11,6 +11,10 @@
   var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   var maxFiles = parseInt(form.getAttribute('data-max-files'), 10) || 3;
   var maxBytes = (parseFloat(form.getAttribute('data-max-file-mb')) || 10) * 1024 * 1024;
+  var maxTotal = (parseFloat(form.getAttribute('data-max-total-mb')) || 25) * 1024 * 1024;
+  var check = form.querySelector('.cf-turnstile');
+  // Server field names -> form element ids, for errors the Worker reports.
+  var fieldIds = { name: 'support-name', email: 'support-email', store_url: 'support-store', theme_version: 'support-version', topic: 'support-topic', message: 'support-message', attachments: 'support-files' };
   var allowed = /\.(png|jpe?g|gif|webp|pdf|zip)$/i;
   form.setAttribute('novalidate', '');
 
@@ -28,10 +32,13 @@
   function checkFiles(input) {
     var files = input && input.files ? Array.prototype.slice.call(input.files) : [];
     if (files.length > maxFiles) return 'Attach up to ' + maxFiles + ' files. You chose ' + files.length + '.';
+    var total = 0;
     for (var i = 0; i < files.length; i++) {
+      total += files[i].size;
       if (!allowed.test(files[i].name)) return files[i].name + ' isn\'t a PNG, JPG, GIF, WebP, PDF or ZIP file.';
       if (files[i].size > maxBytes) return files[i].name + ' is larger than ' + (maxBytes / 1048576) + ' MB.';
     }
+    if (total > maxTotal) return 'Your files add up to more than ' + (maxTotal / 1048576) + ' MB.';
     return '';
   }
 
@@ -82,14 +89,36 @@
     });
   });
 
+  function showProblems(problems) {
+    var items = problems.map(function (p) {
+      return '<li><a href="#' + p.id + '">' + escapeHtml(p.message) + '</a></li>';
+    }).join('');
+    showStatus('error', '<p><strong>Please fix ' + (problems.length === 1 ? '1 problem' : problems.length + ' problems') + ':</strong></p><ul>' + items + '</ul>');
+  }
+
+  function turnstileToken() {
+    var input = form.querySelector('[name="cf-turnstile-response"]');
+    return input ? input.value : '';
+  }
+
+  function resetTurnstile() {
+    if (check && window.turnstile) { try { window.turnstile.reset(check); } catch (e) { /* widget not ready */ } }
+  }
+
   form.addEventListener('submit', function (event) {
     event.preventDefault();
     var problems = validate();
+    // If the bot check loaded but hasn't finished, wait for it. If it never loaded (blocked or offline),
+    // send anyway: we still get the message, but no confirmation email is sent.
+    var checkError = document.getElementById('support-check-error');
+    if (check && checkError) {
+      var pending = window.turnstile && !turnstileToken();
+      checkError.textContent = pending ? 'Wait for the bot check to finish, then send again.' : '';
+      checkError.hidden = !pending;
+      if (pending) problems.push({ id: 'support-check', message: 'Wait for the bot check to finish, then send again.' });
+    }
     if (problems.length) {
-      var items = problems.map(function (p) {
-        return '<li><a href="#' + p.id + '">' + escapeHtml(p.message) + '</a></li>';
-      }).join('');
-      showStatus('error', '<p><strong>Please fix ' + (problems.length === 1 ? '1 problem' : problems.length + ' problems') + ':</strong></p><ul>' + items + '</ul>');
+      showProblems(problems);
       return;
     }
     // Spam bots fill in the hidden honeypot. Pretend it worked and send nothing.
@@ -103,11 +132,35 @@
     submit.textContent = 'Sending…';
     fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } })
       .then(function (response) {
-        if (!response.ok) { var err = new Error('HTTP ' + response.status); err.status = response.status; throw err; }
+        return response.json().catch(function () { return {}; }).then(function (data) {
+          if (!response.ok) { var err = new Error('HTTP ' + response.status); err.status = response.status; err.data = data; throw err; }
+          return data;
+        });
+      })
+      .then(function (data) {
         form.reset();
-        showStatus('success', '<p><strong>Thanks, your message has been sent.</strong> We\'ll reply to the email address you gave us.</p>');
+        resetTurnstile();
+        showStatus('success', data && data.autoReply === false
+          ? '<p><strong>Thanks, your message has been sent.</strong> We couldn\'t send you a confirmation email this time, but your message reached us and we\'ll reply to the email address you gave us.</p>'
+          : '<p><strong>Thanks, your message has been sent.</strong> We\'ll email you a confirmation now, and reply to the same address.</p>');
       })
       .catch(function (err) {
+        resetTurnstile();
+        var data = (err && err.data) || {};
+        var fields = data.fields || {};
+        var serverProblems = Object.keys(fields).filter(function (k) { return fieldIds[k]; }).map(function (k) {
+          setError(document.getElementById(fieldIds[k]), fields[k]);
+          return { id: fieldIds[k], message: fields[k] };
+        });
+        if (serverProblems.length) { showProblems(serverProblems); return; }
+        if (err && err.status === 429) {
+          showStatus('error', '<p><strong>Too many messages in a short time.</strong> Please wait a minute and try again.</p>');
+          return;
+        }
+        if (data.error === 'turnstile_failed' || data.error === 'turnstile_required' || data.error === 'turnstile_unavailable') {
+          showStatus('error', '<p><strong>The bot check didn\'t pass.</strong> Please try again. If it keeps failing, <a href="' + issueUrl + '">open a support request on GitHub</a>.</p>');
+          return;
+        }
         if (err && err.status === 413) {
           showStatus('error', '<p><strong>Your files are too large to send.</strong> Try smaller or fewer files, or send the message without them and we\'ll ask for them by email.</p>');
           return;

@@ -30,21 +30,20 @@ jekyll serve   # http://127.0.0.1:4000/plinth-docs/
 
 ## Activating the support form
 
-GitHub Pages can't process form submissions, so the form posts to a form service, [FormBackend](https://www.formbackend.com). Until it's set up, the form is disabled and the page points people to GitHub issues (template: `.github/ISSUE_TEMPLATE/support.yml`).
+GitHub Pages can't process form submissions, so the form posts to our own Cloudflare Worker, kept in the private repo **AccurateTLM13/plinth-support-worker**. The Worker checks the form, emails it (with any files attached) to the support inbox, and sends the merchant an auto-reply, as the Theme Store requires. Until it's deployed, the form is disabled and the page points people to GitHub issues (template: `.github/ISSUE_TEMPLATE/support.yml`).
 
-The Theme Store requires the support form to accept file uploads and send an auto-responder. On FormBackend that needs the **Simple** plan ($5/month, or yearly billing with 2 months free) or higher. The free plan has neither.
+1. Deploy the Worker by following the README in plinth-support-worker. You'll end up with its URL, for example `https://plinth-support.<your-subdomain>.workers.dev`, and a Cloudflare Turnstile site key.
+2. In `_config.yml`, set:
+   - `support_form.endpoint` to the Worker URL plus `/submit`.
+   - `support_form.turnstile_site_key` to the Turnstile site key. It's public, so committing it is fine. (The secret key only goes into the Worker.)
+   - Keep `honeypot_field`, `max_files`, `max_file_mb` and `max_total_mb` the same as the Worker's `HONEYPOT_FIELD`, `MAX_FILES`, `MAX_FILE_MB` and `MAX_TOTAL_MB`.
+3. Commit to `main`. GitHub Pages rebuilds in about a minute, and the form is live: the notice disappears, the fields are enabled, and the Turnstile check appears above the button.
+4. Send a test message with a file attached, once with JavaScript on and once with it off. With JavaScript on, you should get the notification with the file attached plus the auto-reply, and the page shows a success message. With it off, you should get the notification marked `[unverified]`, no auto-reply, and land on `/support/received/`.
 
-1. Sign up at https://www.formbackend.com, choose the Simple plan, and create a form (for example "Plinth support"). Set it to send submission emails to the support inbox.
-2. In the form's settings:
-   - **Auto-response:** turn on the auto-response email to the submitter. FormBackend sends it to the field named `email`, which the form already uses. Suggested text: "Thanks for contacting Plinth support. We've received your request and will reply to this address. Please don't reply with passwords or customer data."
-   - **Spam:** keep the honeypot field name `formbackend_nono` (the default), and add `https://accuratetlm13.github.io` under Whitelisted domains.
-   - **Data retention:** set auto-delete to 90 days. The support page tells people submissions are deleted after 90 days, so change that text if you choose a different period.
-   - **Email attachments:** optionally attach uploaded files to the notification emails.
-3. Copy the form's endpoint URL (`https://www.formbackend.com/f/<token>`) into `support_form.endpoint` in `_config.yml`.
-4. Commit to `main`. GitHub Pages rebuilds in about a minute, and the form is live: the notice disappears and the fields are enabled.
-5. Send a test message with a file attached, once with JavaScript on and once with it off, and confirm that the submission arrives with its file, the auto-response is delivered, and the no-JS submission lands on `/support/thanks/`.
+The form sends `name`, `email`, `store_url`, `theme_version`, `topic`, `message`, up to 3 files as `attachments[]` (multipart/form-data), the honeypot `website` (empty for people), the hidden field `theme` (`Plinth`), and the Turnstile token `cf-turnstile-response` when JavaScript is on.
 
-The form sends `name`, `email`, `store_url`, `theme_version`, `topic`, `message` and up to 3 files as `attachments[]` (multipart/form-data). It also sends the hidden fields from `support_form.hidden_fields`: `theme` (`Plinth`) and `_redirect`, which is FormBackend's special field for the no-JS confirmation page. With JavaScript, the browser checks the fields and the files (count, type, and `max_file_mb` per file) and submits in the background (`fetch` with `FormData` and `Accept: application/json`). Without JavaScript the form posts normally, and FormBackend redirects to `/support/thanks/`. Browsers can't check file sizes without JavaScript, so the service's own limits apply there.
+- **With JavaScript:** the browser checks the fields and the files (count, type, size per file and in total), then submits in the background (`fetch` with `FormData` and `Accept: application/json`). The Worker answers with JSON, and its field errors are shown next to the right fields.
+- **Without JavaScript:** Turnstile can't run, so the form posts normally. The Worker still delivers the message, marked unverified, but sends no auto-reply (so nobody can use the form to email strangers), then redirects to `/support/received/`, which explains that. Verified posts redirect to `/support/thanks/`. If the Worker rejects a no-JS post, it shows a plain error page with a link back.
 
 ## Screenshots
 

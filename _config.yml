@@ -7,24 +7,25 @@ theme_version: "1.1.7"
 github_repo: AccurateTLM13/plinth-docs
 
 # ---------------------------------------------------------------------------
-# SUPPORT FORM — the only value you need to change to turn the form on.
+# SUPPORT FORM — the values you need to change to turn the form on.
 #
 # PLACEHOLDER: `endpoint` is intentionally empty, so the support page shows
 # a notice and points people to GitHub issues instead.
 #
-# Service: FormBackend (https://www.formbackend.com), Simple plan or higher.
-# The free plan has no file uploads or auto-responses, which the Theme Store
-# requires. To activate: paste the form's endpoint URL below, commit, and
-# GitHub Pages rebuilds the site in about a minute. See README.md.
+# Backend: our own Cloudflare Worker (private repo AccurateTLM13/plinth-support-worker).
+# To activate: deploy the Worker, paste its /submit URL below plus the
+# Turnstile site key (public, safe to commit), commit, and GitHub Pages
+# rebuilds the site in about a minute. See README.md.
 # ---------------------------------------------------------------------------
 support_form:
-  endpoint: ""                        # e.g. "https://www.formbackend.com/f/abc123def456"
-  honeypot_field: "formbackend_nono"  # FormBackend's default spam-trap field name
-  max_files: 3                        # attachments per request (checked in the browser)
-  max_file_mb: 10                     # size limit per file, in MB (checked in the browser)
-  hidden_fields:                      # sent with every request
-    _redirect: "https://accuratetlm13.github.io/plinth-docs/support/thanks/"  # no-JS confirmation page
-    theme: "Plinth"                   # theme name, as the Theme Store asks for
+  endpoint: ""                 # e.g. "https://plinth-support.<your-subdomain>.workers.dev/submit"
+  turnstile_site_key: ""       # Cloudflare Turnstile site key (public). Empty = no widget.
+  honeypot_field: "website"    # must match HONEYPOT_FIELD in the Worker's wrangler.jsonc
+  max_files: 3                 # these three must match the Worker's MAX_FILES / MAX_FILE_MB / MAX_TOTAL_MB
+  max_file_mb: 10
+  max_total_mb: 25
+  hidden_fields:               # sent with every request
+    theme: "Plinth"            # theme name, as the Theme Store asks for
 
 markdown: kramdown
 kramdown:
