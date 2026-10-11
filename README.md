@@ -30,15 +30,21 @@ jekyll serve   # http://127.0.0.1:4000/plinth-docs/
 
 ## Activating the support form
 
-GitHub Pages can't process form submissions, so the form posts to a form service. Until one is set up, the form is disabled and the page points people to GitHub issues (template: `.github/ISSUE_TEMPLATE/support.yml`).
+GitHub Pages can't process form submissions, so the form posts to a form service, [FormBackend](https://www.formbackend.com). Until it's set up, the form is disabled and the page points people to GitHub issues (template: `.github/ISSUE_TEMPLATE/support.yml`).
 
-1. Create a free form at a service of your choice (for example Formspree, Basin or Web3Forms), set to deliver submissions to your support inbox. Allow `https://accuratetlm13.github.io` as a domain if the service asks.
-2. In `_config.yml`, set `support_form.endpoint` to the form's POST URL, for example `https://formspree.io/f/abcd1234`.
-3. Set `support_form.honeypot_field` to the spam-trap field name your service expects (Formspree uses `_gotcha`, Web3Forms uses `botcheck`; check your service's docs). If your service needs extra hidden fields, such as Web3Forms' `access_key`, add them under `support_form.hidden_fields`.
+The Theme Store requires the support form to accept file uploads and send an auto-responder. On FormBackend that needs the **Simple** plan ($5/month, or yearly billing with 2 months free) or higher. The free plan has neither.
+
+1. Sign up at https://www.formbackend.com, choose the Simple plan, and create a form (for example "Plinth support"). Set it to send submission emails to the support inbox.
+2. In the form's settings:
+   - **Auto-response:** turn on the auto-response email to the submitter. FormBackend sends it to the field named `email`, which the form already uses. Suggested text: "Thanks for contacting Plinth support. We've received your request and will reply to this address. Please don't reply with passwords or customer data."
+   - **Spam:** keep the honeypot field name `formbackend_nono` (the default), and add `https://accuratetlm13.github.io` under Whitelisted domains.
+   - **Data retention:** set auto-delete to 90 days. The support page tells people submissions are deleted after 90 days, so change that text if you choose a different period.
+   - **Email attachments:** optionally attach uploaded files to the notification emails.
+3. Copy the form's endpoint URL (`https://www.formbackend.com/f/<token>`) into `support_form.endpoint` in `_config.yml`.
 4. Commit to `main`. GitHub Pages rebuilds in about a minute, and the form is live: the notice disappears and the fields are enabled.
-5. Send a test message, with JavaScript on and off, and confirm it arrives.
+5. Send a test message with a file attached, once with JavaScript on and once with it off, and confirm that the submission arrives with its file, the auto-response is delivered, and the no-JS submission lands on `/support/thanks/`.
 
-The form sends: `name`, `email`, `store_url`, `theme_version`, `topic` and `message`. With JavaScript it validates inline and submits in the background (`Accept: application/json`). Without JavaScript it posts normally, and the service shows its own confirmation page.
+The form sends `name`, `email`, `store_url`, `theme_version`, `topic`, `message` and up to 3 files as `attachments[]` (multipart/form-data). It also sends the hidden fields from `support_form.hidden_fields`: `theme` (`Plinth`) and `_redirect`, which is FormBackend's special field for the no-JS confirmation page. With JavaScript, the browser checks the fields and the files (count, type, and `max_file_mb` per file) and submits in the background (`fetch` with `FormData` and `Accept: application/json`). Without JavaScript the form posts normally, and FormBackend redirects to `/support/thanks/`. Browsers can't check file sizes without JavaScript, so the service's own limits apply there.
 
 ## Screenshots
 

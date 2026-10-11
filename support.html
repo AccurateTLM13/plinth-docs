@@ -27,9 +27,10 @@ scripts:
 </div>
 {%- endif %}
 
-<form class="form" id="support-form" method="post" accept-charset="utf-8"
+<form class="form" id="support-form" method="post" accept-charset="utf-8" enctype="multipart/form-data"
   {%- if endpoint != "" %} action="{{ endpoint | escape }}"{% endif %}
   data-support-form data-issue-url="{{ issue_url }}" data-honeypot="{{ form.honeypot_field | escape }}"
+  data-max-files="{{ form.max_files }}" data-max-file-mb="{{ form.max_file_mb }}"
   aria-describedby="form-required-note">
   <div class="form-status" id="form-status" tabindex="-1" hidden data-form-status></div>
   <p id="form-required-note">All fields are required unless marked optional.</p>
@@ -84,6 +85,14 @@ scripts:
       <textarea id="support-message" name="message" required maxlength="5000" rows="7" aria-describedby="support-message-hint support-message-error"></textarea>
       <p class="field__error" id="support-message-error" hidden></p>
     </div>
+    <div class="field">
+      <label for="support-files">Screenshots or files <span class="optional">(optional)</span></label>
+      <span class="hint" id="support-files-hint">Up to {{ form.max_files }} files, {{ form.max_file_mb }} MB each: PNG, JPG, GIF, WebP, PDF or ZIP. A screenshot of the problem helps us a lot. Don't attach anything with passwords or customer details.</span>
+      <input id="support-files" name="attachments[]" type="file" multiple
+        accept=".png,.jpg,.jpeg,.gif,.webp,.pdf,.zip,image/png,image/jpeg,image/gif,image/webp,application/pdf,application/zip"
+        aria-describedby="support-files-hint support-files-error">
+      <p class="field__error" id="support-files-error" hidden></p>
+    </div>
     <div class="hp" aria-hidden="true">
       <label for="support-hp">Leave this field empty</label>
       <input id="support-hp" name="{{ form.honeypot_field | escape }}" type="text" tabindex="-1" autocomplete="off">
@@ -94,9 +103,26 @@ scripts:
     <button class="btn btn--accent" type="submit" data-submit>Send message</button>
   </fieldset>
   {%- if endpoint != "" %}
-  <noscript><p>Your message is sent through our form provider, which shows a confirmation page when it's done.</p></noscript>
+  <noscript><p>When you send the form, you'll be taken to a confirmation page.</p></noscript>
   {%- endif %}
 </form>
+
+{%- if endpoint != "" %}
+<h2 id="after">What happens next</h2>
+<ul>
+  <li>You'll get an automatic email confirming we've received your request. If it doesn't arrive within a few minutes, check your spam folder.</li>
+  <li>We reply from our support inbox to the email address you gave us.</li>
+</ul>
+
+<h2 id="privacy">How we handle your message</h2>
+<p>The contact form is handled by <a href="https://www.formbackend.com/">FormBackend</a>, a form service. When you send it, your name, email address, store URL, theme version, topic, message and any attached files are sent to FormBackend, which stores them and emails them to our support inbox. FormBackend's handling of that data is covered by its <a href="https://www.formbackend.com/privacy">privacy policy</a>.</p>
+<ul>
+  <li>We use what you send only to answer your request. We don't add you to a mailing list or share your details with anyone else.</li>
+  <li>Submissions and attached files are deleted automatically from FormBackend after 90 days. Our replies stay in our support inbox.</li>
+  <li>To have your request deleted sooner, ask us in a reply or with a new request.</li>
+  <li>Never send passwords, staff account access or customer data. If we need store access, we'll ask for a collaborator request through Shopify instead.</li>
+</ul>
+{%- endif %}
 
 <h2 id="github">Open a support request on GitHub</h2>
 <p>You can also <a href="{{ issue_url }}">open a support request on GitHub</a> (a free GitHub account is needed), or <a href="https://github.com/{{ site.github_repo }}/issues">browse existing requests</a> to see if your question has already been answered. GitHub requests are public, so leave out anything private.</p>

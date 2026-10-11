@@ -12,14 +12,19 @@ github_repo: AccurateTLM13/plinth-docs
 # PLACEHOLDER: `endpoint` is intentionally empty, so the support page shows
 # a notice and points people to GitHub issues instead.
 #
-# To activate: create a form at a form service (for example Formspree, Basin
-# or Web3Forms), paste the form's POST/action URL below, commit, and GitHub
-# Pages rebuilds the site in about a minute. See README.md for details.
+# Service: FormBackend (https://www.formbackend.com), Simple plan or higher.
+# The free plan has no file uploads or auto-responses, which the Theme Store
+# requires. To activate: paste the form's endpoint URL below, commit, and
+# GitHub Pages rebuilds the site in about a minute. See README.md.
 # ---------------------------------------------------------------------------
 support_form:
-  endpoint: ""                 # e.g. "https://formspree.io/f/xxxxxxxx"
-  honeypot_field: "_gotcha"    # spam trap field name your service expects
-  hidden_fields: {}            # extra hidden inputs, e.g. { access_key: "..." } for Web3Forms
+  endpoint: ""                        # e.g. "https://www.formbackend.com/f/abc123def456"
+  honeypot_field: "formbackend_nono"  # FormBackend's default spam-trap field name
+  max_files: 3                        # attachments per request (checked in the browser)
+  max_file_mb: 10                     # size limit per file, in MB (checked in the browser)
+  hidden_fields:                      # sent with every request
+    _redirect: "https://accuratetlm13.github.io/plinth-docs/support/thanks/"  # no-JS confirmation page
+    theme: "Plinth"                   # theme name, as the Theme Store asks for
 
 markdown: kramdown
 kramdown:

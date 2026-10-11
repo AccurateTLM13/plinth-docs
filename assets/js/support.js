@@ -1,4 +1,4 @@
-// Support form: accessible inline validation, honeypot and Ajax submit.
+// Support form: accessible inline validation (including attachments), honeypot and Ajax submit.
 // Without JavaScript the form posts directly to the configured endpoint.
 (function () {
   var form = document.querySelector('[data-support-form]');
@@ -9,6 +9,9 @@
   var honeypot = form.querySelector('[name="' + form.getAttribute('data-honeypot') + '"]');
   var issueUrl = form.getAttribute('data-issue-url');
   var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  var maxFiles = parseInt(form.getAttribute('data-max-files'), 10) || 3;
+  var maxBytes = (parseFloat(form.getAttribute('data-max-file-mb')) || 10) * 1024 * 1024;
+  var allowed = /\.(png|jpe?g|gif|webp|pdf|zip)$/i;
   form.setAttribute('novalidate', '');
 
   var rules = [
@@ -18,8 +21,19 @@
       return emailPattern.test(v) ? '' : 'Enter an email address like name@example.com.';
     } },
     { id: 'support-topic', label: 'Topic', check: function (v) { return v ? '' : 'Choose a topic.'; } },
-    { id: 'support-message', label: 'Message', check: function (v) { return v ? '' : 'Enter your message.'; } }
+    { id: 'support-message', label: 'Message', check: function (v) { return v ? '' : 'Enter your message.'; } },
+    { id: 'support-files', label: 'Files', check: function () { return checkFiles(document.getElementById('support-files')); } }
   ];
+
+  function checkFiles(input) {
+    var files = input && input.files ? Array.prototype.slice.call(input.files) : [];
+    if (files.length > maxFiles) return 'Attach up to ' + maxFiles + ' files. You chose ' + files.length + '.';
+    for (var i = 0; i < files.length; i++) {
+      if (!allowed.test(files[i].name)) return files[i].name + ' isn\'t a PNG, JPG, GIF, WebP, PDF or ZIP file.';
+      if (files[i].size > maxBytes) return files[i].name + ' is larger than ' + (maxBytes / 1048576) + ' MB.';
+    }
+    return '';
+  }
 
   function setError(field, message) {
     var error = document.getElementById(field.id + '-error');
@@ -61,7 +75,10 @@
   rules.forEach(function (rule) {
     var field = document.getElementById(rule.id);
     field.addEventListener('change', function () {
-      if (field.getAttribute('aria-invalid') === 'true') setError(field, rule.check(field.value.trim()));
+      // Files are checked as soon as they're chosen; other fields once they've been flagged.
+      if (field.type === 'file' || field.getAttribute('aria-invalid') === 'true') setError(field, rule.check(field.value.trim()));
+      // Once every problem is fixed, the error summary is out of date: hide it.
+      if (status.classList.contains('form-status--error') && !form.querySelector('[aria-invalid="true"]')) status.hidden = true;
     });
   });
 
@@ -81,15 +98,20 @@
       showStatus('success', '<p><strong>Thanks, your message has been sent.</strong></p>');
       return;
     }
+    status.hidden = true;
     submit.disabled = true;
     submit.textContent = 'Sending…';
     fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } })
       .then(function (response) {
-        if (!response.ok) throw new Error('HTTP ' + response.status);
+        if (!response.ok) { var err = new Error('HTTP ' + response.status); err.status = response.status; throw err; }
         form.reset();
         showStatus('success', '<p><strong>Thanks, your message has been sent.</strong> We\'ll reply to the email address you gave us.</p>');
       })
-      .catch(function () {
+      .catch(function (err) {
+        if (err && err.status === 413) {
+          showStatus('error', '<p><strong>Your files are too large to send.</strong> Try smaller or fewer files, or send the message without them and we\'ll ask for them by email.</p>');
+          return;
+        }
         showStatus('error', '<p><strong>Sorry, your message couldn\'t be sent.</strong> Please try again, or <a href="' + issueUrl + '">open a support request on GitHub</a>.</p>');
       })
       .then(function () {
