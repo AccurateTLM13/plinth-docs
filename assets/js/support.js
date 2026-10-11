@@ -153,6 +153,10 @@
           return { id: fieldIds[k], message: fields[k] };
         });
         if (serverProblems.length) { showProblems(serverProblems); return; }
+        if (data.error === 'not_active') {
+          showStatus('error', '<p><strong>The contact form isn\'t active yet.</strong> Please <a href="' + issueUrl + '">open a support request on GitHub</a> instead. GitHub requests are public, so leave out anything private.</p>');
+          return;
+        }
         if (err && err.status === 429) {
           showStatus('error', '<p><strong>Too many messages in a short time.</strong> Please wait a minute and try again.</p>');
           return;

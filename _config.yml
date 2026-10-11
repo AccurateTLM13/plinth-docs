@@ -9,7 +9,7 @@ description: Documentation and support for Plinth, a bold, fast Shopify theme.
 url: https://themes.lemonteed.com
 baseurl: ""
 lang: en
-theme_version: "1.1.7"
+theme_version: "1.1.8"
 github_repo: AccurateTLM13/plinth-docs
 
 # ---------------------------------------------------------------------------
@@ -25,8 +25,8 @@ github_repo: AccurateTLM13/plinth-docs
 # ---------------------------------------------------------------------------
 support_form:
   active: false                # false = show the "not connected yet" notice even if endpoint is set (flip to true once Resend is verified)
-  endpoint: ""                 # e.g. "https://plinth-support.<your-subdomain>.workers.dev/submit"
-  turnstile_site_key: ""       # Cloudflare Turnstile site key (public). Empty = no widget.
+  endpoint: "https://api.themes.lemonteed.com/submit"   # plinth-support Worker (Workers Custom Domain)
+  turnstile_site_key: "0x4AAAAAAFUKXBlU50e55m-C"   # Cloudflare Turnstile site key (public, safe to commit)
   honeypot_field: "website"    # must match HONEYPOT_FIELD in the Worker's wrangler.jsonc
   max_files: 3                 # these three must match the Worker's MAX_FILES / MAX_FILE_MB / MAX_TOTAL_MB
   max_file_mb: 10

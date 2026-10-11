@@ -6,6 +6,14 @@ redirect_from: /changelog/
 lede: What's new in each version of Plinth.
 description: Plinth release notes.
 ---
+## 1.1.8
+
+*October 2026*
+
+### Changed
+
+- **New documentation address.** The theme's documentation and support links (in **Theme settings > Theme information**) now point to [themes.lemonteed.com/plinth/](https://themes.lemonteed.com/plinth/) and [themes.lemonteed.com/plinth/support/](https://themes.lemonteed.com/plinth/support/). The old addresses redirect here, so existing bookmarks keep working.
+
 ## 1.1.7
 
 *October 2026*
