@@ -39,7 +39,7 @@ GitHub Pages can't process form submissions, so the form posts to our own Cloudf
    - `support_form.endpoint` to the Worker URL plus `/submit`.
    - `support_form.turnstile_site_key` to the Turnstile site key. It's public, so committing it is fine. (The secret key only goes into the Worker.)
    - Keep `honeypot_field`, `max_files`, `max_file_mb` and `max_total_mb` the same as the Worker's `HONEYPOT_FIELD`, `MAX_FILES`, `MAX_FILE_MB` and `MAX_TOTAL_MB`.
-3. Commit to `main`. GitHub Pages rebuilds in about a minute, and the form is live: the notice disappears, the fields are enabled, and the Turnstile check appears above the button.
+3. Set `support_form.active: true` (and `support_email_public: true` once Email Routing forwards mail), then commit to `main`. GitHub Pages rebuilds in about a minute, and the form is live: the notice disappears, the fields are enabled, and the Turnstile check appears above the button.
 4. Send a test message with a file attached, once with JavaScript on and once with it off. With JavaScript on, you should get the notification with the file attached plus the auto-reply, and the page shows a success message. With it off, you should get the notification marked `[unverified]`, no auto-reply, and land on `/plinth/support/received/`.
 
 The form sends `name`, `email`, `store_url`, `theme_version`, `topic`, `message`, up to 3 files as `attachments[]` (multipart/form-data), the honeypot `website` (empty for people), the hidden field `theme` (`Plinth`), and the Turnstile token `cf-turnstile-response` when JavaScript is on.

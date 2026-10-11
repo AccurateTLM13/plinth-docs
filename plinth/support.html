@@ -10,7 +10,9 @@ scripts:
 ---
 {%- assign form = site.support_form -%}
 {%- assign endpoint = form.endpoint | strip -%}
+{%- unless form.active == true %}{% assign endpoint = "" %}{% endunless -%}
 {%- assign support_email = site.support_email | strip -%}
+{%- unless site.support_email_public == true %}{% assign support_email = "" %}{% endunless -%}
 {%- capture issue_url %}https://github.com/{{ site.github_repo }}/issues/new?template=support.yml{% endcapture -%}
 
 <h2 id="before">Before you get in touch</h2>
