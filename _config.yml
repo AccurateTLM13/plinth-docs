@@ -1,7 +1,7 @@
 title: Plinth Docs
 brand: Lemonteed Themes
 support_email: "support@themes.lemonteed.com"   # forwarded to our inbox by Cloudflare Email Routing
-support_email_public: false   # true = list the address on the support page (turn on once Email Routing is verified)
+support_email_public: true    # true = list the address on the support page (turn on once Email Routing is verified)
 description: Documentation and support for Plinth, a bold, fast Shopify theme.
 # Served at https://themes.lemonteed.com (custom domain, see the CNAME file).
 # Site root (/) is the Lemonteed Themes landing page; Plinth's docs live under /plinth/
@@ -24,7 +24,7 @@ github_repo: AccurateTLM13/plinth-docs
 # rebuilds the site in about a minute. See README.md.
 # ---------------------------------------------------------------------------
 support_form:
-  active: false                # false = show the "not connected yet" notice even if endpoint is set (flip to true once Resend is verified)
+  active: true                 # false = show the "not connected yet" notice even if endpoint is set (flip to true once Resend is verified)
   endpoint: "https://api.themes.lemonteed.com/submit"   # plinth-support Worker (Workers Custom Domain)
   turnstile_site_key: "0x4AAAAAAFUKXBlU50e55m-C"   # Cloudflare Turnstile site key (public, safe to commit)
   honeypot_field: "website"    # must match HONEYPOT_FIELD in the Worker's wrangler.jsonc
